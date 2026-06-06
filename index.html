@@ -7,11 +7,13 @@
   <title>Aidan Mansell — Session Guitarist</title>
   <meta name="description" content="Aidan Mansell. London based session guitarist, guitar technician, playback tech and producer." />
 
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@mux/mux-player@3"></script>
+
   <style>
     :root{
       --bg:#f4f1ea;
       --ink:#111111;
-      --muted:#6e6a62;
+      --muted:#5f5a52;
       --line:#d8d2c6;
       --card:#fffaf0;
       --soft:#ebe5d8;
@@ -264,12 +266,12 @@
 
     .tag{
       display:inline-flex;
-      border:1px solid var(--line);
+      border:1px solid rgba(17,17,17,.28);
       padding:7px 10px;
       border-radius:999px;
       font-size:12px;
-      color:var(--muted);
-      background:var(--bg);
+      color:#4b463f;
+      background:rgba(255,255,255,.52);
       text-transform:uppercase;
       letter-spacing:.08em;
     }
@@ -348,14 +350,14 @@
     }
 
     .credit-tags span{
-      border:1px solid var(--line);
+      border:1px solid rgba(17,17,17,.24);
       border-radius:999px;
       padding:5px 8px;
       font-size:11px;
-      color:var(--muted);
+      color:#4d4942;
       text-transform:uppercase;
       letter-spacing:.06em;
-      background:rgba(255,255,255,.35);
+      background:rgba(255,255,255,.42);
     }
 
     .credit-label{
@@ -363,29 +365,6 @@
       color:var(--muted);
       text-transform:uppercase;
       letter-spacing:.14em;
-    }
-
-    .work-item.featured{
-      background:var(--ink);
-      color:var(--bg);
-    }
-
-    .work-item.featured .work-main,
-    .work-item.featured .work-year{
-      border-color:rgba(244,241,234,.2);
-    }
-
-    .work-item.featured p,
-    .work-item.featured .work-role,
-    .work-item.featured .credit-label,
-    .work-item.featured .work-year{
-      color:rgba(244,241,234,.72);
-    }
-
-    .work-item.featured .credit-tags span{
-      border-color:rgba(244,241,234,.24);
-      color:var(--bg);
-      background:rgba(244,241,234,.08);
     }
 
     .watch-shell{
@@ -415,8 +394,8 @@
     }
 
     .video-slide{
-      flex:0 0 min(390px,78vw);
-      aspect-ratio:9/13;
+      flex:0 0 min(340px,74vw);
+      aspect-ratio:9/16;
       border:1px solid var(--ink);
       background:#111;
       position:relative;
@@ -439,24 +418,30 @@
       transform:scale(.94) translateY(10px);
     }
 
-    .video-thumb,
-    .video-frame{
+    .video-thumb{
+      position:absolute;
+      inset:0;
       width:100%;
       height:100%;
       object-fit:cover;
       display:block;
-      border:0;
       background:#111;
     }
 
-    .video-thumb{
+    mux-player{
       position:absolute;
       inset:0;
-    }
-
-    .video-frame{
-      position:absolute;
-      inset:0;
+      width:100%;
+      height:100%;
+      display:block;
+      background:#111;
+      --media-object-fit:cover;
+      --media-object-position:center;
+      --controls-backdrop-color:rgba(0,0,0,.3);
+      --media-control-background:rgba(0,0,0,.18);
+      --media-control-hover-background:rgba(0,0,0,.32);
+      --media-primary-color:#f4f1ea;
+      --media-secondary-color:#111111;
     }
 
     .video-loading{
@@ -464,7 +449,7 @@
       inset:0;
       display:grid;
       place-items:center;
-      color:rgba(244,241,234,.72);
+      color:rgba(244,241,234,.82);
       font-size:12px;
       text-transform:uppercase;
       letter-spacing:.14em;
@@ -583,12 +568,12 @@
     }
 
     .micro span{
-      border:1px solid var(--line);
+      border:1px solid rgba(17,17,17,.24);
       padding:5px 8px;
       border-radius:999px;
       font-size:11px;
-      color:var(--muted);
-      background:rgba(255,255,255,.35);
+      color:#4d4942;
+      background:rgba(255,255,255,.42);
       white-space:nowrap;
     }
 
@@ -691,11 +676,6 @@
         border-top:1px solid var(--line);
         justify-content:flex-start;
         text-align:left;
-      }
-
-      .work-item.featured .work-main,
-      .work-item.featured .work-year{
-        border-color:rgba(244,241,234,.2);
       }
     }
 
@@ -862,7 +842,7 @@
 
         <div class="work-list">
 
-          <div class="work-item featured">
+          <div class="work-item">
             <div class="work-main">
               <div>
                 <h3>South Arcade</h3>
@@ -1138,7 +1118,7 @@
 
             <div class="dots" id="videoDots" aria-label="Video navigation dots"></div>
 
-            <div class="carousel-count" id="videoCount">01 / 06</div>
+            <div class="carousel-count" id="videoCount">04 / 06</div>
           </div>
         </div>
       </div>
@@ -1158,11 +1138,7 @@
               <h3>Logic Pro X</h3>
               <p>Production, guitar tracking, editing, session prep and playback file exports.</p>
             </div>
-            <div class="micro">
-              <span>production</span>
-              <span>tracking</span>
-              <span>playback</span>
-            </div>
+            <div class="micro"><span>production</span><span>tracking</span><span>playback</span></div>
           </div>
 
           <div class="detail-card">
@@ -1171,11 +1147,7 @@
               <h3>Ableton Live</h3>
               <p>Live playback sessions, click tracks, cues, stems and show file organisation.</p>
             </div>
-            <div class="micro">
-              <span>clicks</span>
-              <span>cues</span>
-              <span>stems</span>
-            </div>
+            <div class="micro"><span>clicks</span><span>cues</span><span>stems</span></div>
           </div>
 
           <div class="detail-card">
@@ -1184,11 +1156,7 @@
               <h3>Cubase</h3>
               <p>Editing, stems, session prep and playback organisation.</p>
             </div>
-            <div class="micro">
-              <span>editing</span>
-              <span>stems</span>
-              <span>prep</span>
-            </div>
+            <div class="micro"><span>editing</span><span>stems</span><span>prep</span></div>
           </div>
 
           <div class="detail-card">
@@ -1197,11 +1165,7 @@
               <h3>Show files</h3>
               <p>Clicks, cues, stems, MIDI changes and practical live playback setup.</p>
             </div>
-            <div class="micro">
-              <span>clicks</span>
-              <span>MIDI</span>
-              <span>show prep</span>
-            </div>
+            <div class="micro"><span>clicks</span><span>MIDI</span><span>show prep</span></div>
           </div>
 
           <div class="detail-card">
@@ -1210,11 +1174,7 @@
               <h3>Quad Cortex</h3>
               <p>Live guitar tones, presets, routing and tour ready digital rigs.</p>
             </div>
-            <div class="micro">
-              <span>live sound</span>
-              <span>presets</span>
-              <span>routing</span>
-            </div>
+            <div class="micro"><span>live sound</span><span>presets</span><span>routing</span></div>
           </div>
 
           <div class="detail-card">
@@ -1223,10 +1183,7 @@
               <h3>Kemper</h3>
               <p>Patches, consistent show tones and profiling based live rigs.</p>
             </div>
-            <div class="micro">
-              <span>patches</span>
-              <span>show tones</span>
-            </div>
+            <div class="micro"><span>patches</span><span>show tones</span></div>
           </div>
 
           <div class="detail-card">
@@ -1235,10 +1192,7 @@
               <h3>Line 6 units</h3>
               <p>Patch management, digital guitar setups and live ready sounds.</p>
             </div>
-            <div class="micro">
-              <span>patches</span>
-              <span>rigs</span>
-            </div>
+            <div class="micro"><span>patches</span><span>rigs</span></div>
           </div>
 
           <div class="detail-card">
@@ -1247,11 +1201,7 @@
               <h3>X32 Rack / XR18</h3>
               <p>Routing, rehearsal setups, IEM style workflows and playback integration.</p>
             </div>
-            <div class="micro">
-              <span>routing</span>
-              <span>rehearsals</span>
-              <span>playback</span>
-            </div>
+            <div class="micro"><span>routing</span><span>rehearsals</span><span>playback</span></div>
           </div>
 
           <div class="detail-card">
@@ -1260,10 +1210,7 @@
               <h3>Allen & Heath</h3>
               <p>Stage routing, live audio workflow and practical tech support.</p>
             </div>
-            <div class="micro">
-              <span>routing</span>
-              <span>live audio</span>
-            </div>
+            <div class="micro"><span>routing</span><span>live audio</span></div>
           </div>
 
           <div class="detail-card">
@@ -1272,10 +1219,7 @@
               <h3>SSL</h3>
               <p>Clean signal flow, studio workflow and session familiarity.</p>
             </div>
-            <div class="micro">
-              <span>signal flow</span>
-              <span>sessions</span>
-            </div>
+            <div class="micro"><span>signal flow</span><span>sessions</span></div>
           </div>
 
           <div class="detail-card">
@@ -1284,11 +1228,7 @@
               <h3>Stage guitars</h3>
               <p>Changeovers, tuning stability, basic repairs and keeping sets running cleanly.</p>
             </div>
-            <div class="micro">
-              <span>changeovers</span>
-              <span>tuning</span>
-              <span>repairs</span>
-            </div>
+            <div class="micro"><span>changeovers</span><span>tuning</span><span>repairs</span></div>
           </div>
 
           <div class="detail-card">
@@ -1297,11 +1237,7 @@
               <h3>Show flow</h3>
               <p>Set organisation, rig checks, transitions and practical stage problem solving.</p>
             </div>
-            <div class="micro">
-              <span>sets</span>
-              <span>checks</span>
-              <span>flow</span>
-            </div>
+            <div class="micro"><span>sets</span><span>checks</span><span>flow</span></div>
           </div>
         </div>
       </div>
@@ -1315,49 +1251,17 @@
         </div>
 
         <div class="gallery">
-          <div class="shot big">
-            <img src="images/live-1.jpg" alt="Aidan Mansell live performance crowd shot" />
-          </div>
-
-          <div class="shot mid">
-            <img src="images/live-2.jpg" alt="Aidan Mansell playing guitar live on stage" />
-          </div>
-
-          <div class="shot small">
-            <img src="images/live-3.jpg" alt="Aidan Mansell close up guitar performance" />
-          </div>
-
-          <div class="shot small">
-            <img src="images/live-4.jpg" alt="Aidan Mansell silhouette guitar performance" />
-          </div>
-
-          <div class="shot small">
-            <img src="images/live-5.jpg" alt="Aidan Mansell side stage guitar performance" />
-          </div>
-
-          <div class="shot big">
-            <img src="images/live-6.jpg" alt="Aidan Mansell performing to crowd" />
-          </div>
-
-          <div class="shot mid">
-            <img src="images/live-7.jpg" alt="Aidan Mansell green stage lights performance" />
-          </div>
-
-          <div class="shot small">
-            <img src="images/live-8.jpg" alt="Aidan Mansell red guitar live performance" />
-          </div>
-
-          <div class="shot small">
-            <img src="images/live-9.jpg" alt="Aidan Mansell South Arcade performance" />
-          </div>
-
-          <div class="shot small">
-            <img src="images/live-10.jpg" alt="Aidan Mansell live green stage performance" />
-          </div>
-
-          <div class="shot small">
-            <img src="images/live-11.jpg" alt="Aidan Mansell live guitar performance" />
-          </div>
+          <div class="shot big"><img src="images/live-1.jpg" alt="Aidan Mansell live performance crowd shot" /></div>
+          <div class="shot mid"><img src="images/live-2.jpg" alt="Aidan Mansell playing guitar live on stage" /></div>
+          <div class="shot small"><img src="images/live-3.jpg" alt="Aidan Mansell close up guitar performance" /></div>
+          <div class="shot small"><img src="images/live-4.jpg" alt="Aidan Mansell silhouette guitar performance" /></div>
+          <div class="shot small"><img src="images/live-5.jpg" alt="Aidan Mansell side stage guitar performance" /></div>
+          <div class="shot big"><img src="images/live-6.jpg" alt="Aidan Mansell performing to crowd" /></div>
+          <div class="shot mid"><img src="images/live-7.jpg" alt="Aidan Mansell green stage lights performance" /></div>
+          <div class="shot small"><img src="images/live-8.jpg" alt="Aidan Mansell red guitar live performance" /></div>
+          <div class="shot small"><img src="images/live-9.jpg" alt="Aidan Mansell South Arcade performance" /></div>
+          <div class="shot small"><img src="images/live-10.jpg" alt="Aidan Mansell live green stage performance" /></div>
+          <div class="shot small"><img src="images/live-11.jpg" alt="Aidan Mansell live guitar performance" /></div>
         </div>
       </div>
     </section>
@@ -1370,20 +1274,9 @@
         </div>
 
         <div class="contact-links">
-          <a href="mailto:aidan.mansell@gmail.com">
-            <span>Email</span>
-            <span>aidan.mansell@gmail.com</span>
-          </a>
-
-          <a href="https://www.instagram.com/aidan.nothere/" target="_blank" rel="noreferrer">
-            <span>Instagram</span>
-            <span>@aidan.nothere</span>
-          </a>
-
-          <a href="#top">
-            <span>Location</span>
-            <span>London, UK</span>
-          </a>
+          <a href="mailto:aidan.mansell@gmail.com"><span>Email</span><span>aidan.mansell@gmail.com</span></a>
+          <a href="https://www.instagram.com/aidan.nothere/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@aidan.nothere</span></a>
+          <a href="#top"><span>Location</span><span>London, UK</span></a>
         </div>
       </div>
     </section>
@@ -1413,7 +1306,7 @@
     const next = document.getElementById("nextVideo");
     const stage = document.getElementById("videoStage");
 
-    let activeIndex = 0;
+    let activeIndex = 3;
     let startX = 0;
     let isDragging = false;
 
@@ -1422,11 +1315,7 @@
     }
 
     function muxThumb(playbackId){
-      return `https://image.mux.com/${playbackId}/thumbnail.webp?time=0&width=800`;
-    }
-
-    function muxPlayer(playbackId){
-      return `https://player.mux.com/${playbackId}?metadata-video-title=Aidan%20Mansell%20clip&accent-color=%23f4f1ea`;
+      return `https://image.mux.com/${playbackId}/thumbnail.webp?time=0&width=800&fit_mode=crop`;
     }
 
     function buildCarousel(){
@@ -1463,17 +1352,19 @@
         const item = videoItems[index];
 
         if(index === activeIndex){
-          const existingFrame = slide.querySelector("iframe");
+          const existingPlayer = slide.querySelector("mux-player");
 
-          if(!existingFrame){
+          if(!existingPlayer){
             slide.innerHTML = `
-              <iframe
-                class="video-frame"
-                src="${muxPlayer(item.playbackId)}"
-                title="Aidan Mansell video clip ${index + 1}"
-                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                allowfullscreen
-              ></iframe>
+              <mux-player
+                playback-id="${item.playbackId}"
+                metadata-video-title="Aidan Mansell clip ${index + 1}"
+                stream-type="on-demand"
+                accent-color="#f4f1ea"
+                forward-seek-offset="10"
+                backward-seek-offset="10"
+                playsinline
+              ></mux-player>
             `;
           }
         } else {
