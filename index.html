@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Aidan Mansell — Session Guitarist</title>
-  <meta name="description" content="Aidan Mansell. London based session guitarist, guitar technician, playback tech and producer." />
+  <title>Aidan Mansell — Guitarist, Tech, Playback</title>
+  <meta name="description" content="Aidan Mansell. London based guitarist, guitar technician, playback tech and producer." />
 
   <style>
     :root{
@@ -37,7 +37,7 @@
       inset:0;
       pointer-events:none;
       z-index:50;
-      opacity:.08;
+      opacity:.055;
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
 
@@ -52,7 +52,7 @@
       top:0;
       z-index:20;
       backdrop-filter:blur(12px);
-      background:rgba(244,241,234,.82);
+      background:rgba(244,241,234,.84);
       border-bottom:1px solid var(--line);
     }
 
@@ -106,7 +106,7 @@
       font-size:clamp(58px,10vw,132px);
       letter-spacing:-.075em;
       line-height:.82;
-      max-width:820px;
+      max-width:840px;
     }
 
     .intro{
@@ -197,6 +197,8 @@
     section{
       padding:70px 0;
       border-bottom:1px solid var(--line);
+      content-visibility:auto;
+      contain-intrinsic-size:1px 900px;
     }
 
     .section-head{
@@ -216,7 +218,7 @@
     }
 
     .section-note{
-      max-width:420px;
+      max-width:430px;
       color:var(--muted);
       font-size:15px;
     }
@@ -260,12 +262,12 @@
 
     .tag{
       display:inline-flex;
-      border:1px solid rgba(17,17,17,.28);
+      border:1px solid rgba(17,17,17,.34);
       padding:7px 10px;
       border-radius:999px;
       font-size:12px;
       color:#4b463f;
-      background:rgba(255,255,255,.52);
+      background:rgba(255,255,255,.58);
       text-transform:uppercase;
       letter-spacing:.08em;
     }
@@ -342,14 +344,14 @@
     }
 
     .credit-tags span{
-      border:1px solid rgba(17,17,17,.24);
+      border:1px solid rgba(17,17,17,.28);
       border-radius:999px;
       padding:5px 8px;
       font-size:11px;
       color:#4d4942;
       text-transform:uppercase;
       letter-spacing:.06em;
-      background:rgba(255,255,255,.42);
+      background:rgba(255,255,255,.48);
     }
 
     .credit-label{
@@ -544,47 +546,42 @@
     }
 
     .micro span{
-      border:1px solid rgba(17,17,17,.24);
+      border:1px solid rgba(17,17,17,.28);
       padding:5px 8px;
       border-radius:999px;
       font-size:11px;
       color:#4d4942;
-      background:rgba(255,255,255,.42);
+      background:rgba(255,255,255,.48);
       white-space:nowrap;
     }
 
     .gallery{
       display:grid;
       grid-template-columns:repeat(12,1fr);
+      grid-auto-rows:120px;
       gap:14px;
+      align-items:stretch;
     }
 
     .shot{
       border:1px solid var(--ink);
       background:var(--soft);
       overflow:hidden;
+      min-height:0;
     }
 
     .shot img{
+      width:100%;
       height:100%;
       object-fit:cover;
-      filter:grayscale(.05) contrast(1.08);
+      filter:contrast(1.07) saturate(.92);
     }
 
-    .shot.big{
-      grid-column:span 7;
-      height:520px;
-    }
-
-    .shot.mid{
-      grid-column:span 5;
-      height:520px;
-    }
-
-    .shot.small{
-      grid-column:span 4;
-      height:330px;
-    }
+    .shot.feature{grid-column:span 6;grid-row:span 4}
+    .shot.wide{grid-column:span 6;grid-row:span 2}
+    .shot.square{grid-column:span 3;grid-row:span 2}
+    .shot.tall{grid-column:span 3;grid-row:span 4}
+    .shot.small{grid-column:span 3;grid-row:span 2}
 
     .contact{
       display:grid;
@@ -617,20 +614,6 @@
       color:var(--bg);
     }
 
-    footer{
-      padding:24px 0;
-      color:var(--muted);
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.1em;
-    }
-
-    footer .wrap{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-    }
-
     @media (max-width:1000px){
       .details-compact{grid-template-columns:repeat(2,1fr)}
       .work-item{grid-template-columns:1fr}
@@ -641,23 +624,50 @@
     @media (max-width:850px){
       .hero-grid,
       .contact{grid-template-columns:1fr}
+
       .hero-card img{height:360px}
       .stats{grid-template-columns:repeat(2,1fr)}
       .about-strip{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr}
-      .shot.big,
-      .shot.mid,
-      .shot.small{grid-column:auto;height:auto}
       .navlinks{display:none}
       section{padding:52px 0}
       .carousel-controls{align-items:flex-start;flex-direction:column}
       .dots{justify-content:flex-start}
+
+      .gallery{
+        grid-template-columns:repeat(6,1fr);
+        grid-auto-rows:105px;
+      }
+
+      .shot.feature{grid-column:span 6;grid-row:span 4}
+      .shot.wide{grid-column:span 6;grid-row:span 2}
+      .shot.square,
+      .shot.small{grid-column:span 3;grid-row:span 2}
+      .shot.tall{grid-column:span 3;grid-row:span 4}
     }
 
     @media (max-width:650px){
       .details-compact{grid-template-columns:1fr}
-      footer .wrap{flex-direction:column}
       .contact-links a{flex-direction:column}
+
+      .gallery{
+        grid-template-columns:1fr;
+        grid-auto-rows:auto;
+      }
+
+      .shot,
+      .shot.feature,
+      .shot.wide,
+      .shot.square,
+      .shot.tall,
+      .shot.small{
+        grid-column:auto;
+        grid-row:auto;
+      }
+
+      .shot img{
+        height:auto;
+        aspect-ratio:auto;
+      }
     }
   </style>
 </head>
@@ -683,13 +693,13 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">London based session guitarist</div>
+          <div class="eyebrow">London based guitarist</div>
 
-          <h1>Guitar for live, studio & touring.</h1>
+          <h1>Live guitar, clean rigs, reliable shows.</h1>
 
           <p class="intro">
-            Session guitarist, guitar technician, playback tech and producer working across pop, rock,
-            alternative, R&B, neo soul, fusion, metal, electronic, jazz and hyper pop.
+            Guitarist, guitar technician, playback tech and producer working across live shows,
+            sessions, touring, rehearsal rooms and studio projects.
           </p>
 
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
@@ -699,10 +709,10 @@
         </div>
 
         <aside class="hero-card">
-          <img src="images/hero.jpg" alt="Aidan Mansell playing guitar live on stage" />
+          <img src="images/hero.jpg" alt="Aidan Mansell playing guitar live on stage" fetchpriority="high" />
 
           <div class="meta-row">
-            <span>Session / Tech / Producer</span>
+            <span>Guitar / Tech / Playback</span>
             <span>London, UK</span>
           </div>
         </aside>
@@ -712,17 +722,17 @@
     <div class="wrap stats">
       <div class="stat">
         <b>10+</b>
-        <span>years live playing experience</span>
+        <span>years live playing</span>
       </div>
 
       <div class="stat">
         <b>Touring</b>
-        <span>session guitarist</span>
+        <span>guitar and tech work</span>
       </div>
 
       <div class="stat">
         <b>Playback</b>
-        <span>live systems</span>
+        <span>clicks, cues and stems</span>
       </div>
 
       <div class="stat">
@@ -735,7 +745,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Work</h2>
-          <p class="section-note">Selected live, touring, festival, session, tech and industry work.</p>
+          <p class="section-note">Selected touring, festival, session, tech and music industry work.</p>
         </div>
 
         <div class="about-strip">
@@ -746,8 +756,8 @@
 
           <div>
             <p>
-              I moved to the UK from Sydney, Australia in 2022. Since then I’ve worked across
-              live shows, tours, studio sessions, guitar tech, playback, production and music marketing.
+              I moved from Sydney to the UK in 2022. Since then I have worked across live shows,
+              tours, studio sessions, guitar tech, playback, production and music marketing.
             </p>
 
             <div class="about-chips">
@@ -772,10 +782,7 @@
             </div>
 
             <div class="work-details">
-              <p>
-                Arc Angel UK Tour. Reading & Leeds Festival 2024. I Was Here First UK Tour.
-                As Everything Unfolds headline UK tour.
-              </p>
+              <p>Arc Angel UK Tour. Reading and Leeds 2024. I Was Here First UK Tour. As Everything Unfolds headline UK tour.</p>
 
               <div class="credit-tags">
                 <span>guitar tech</span>
@@ -820,10 +827,7 @@
             </div>
 
             <div class="work-details">
-              <p>
-                As December Falls Join The Club EU and UK Tour. Misery Loves Company Festival.
-                Burn It Down Festival. No Play Festival.
-              </p>
+              <p>As December Falls Join The Club EU and UK Tour. Misery Loves Company Festival. Burn It Down Festival. No Play Festival.</p>
 
               <div class="credit-tags">
                 <span>EU and UK tour</span>
@@ -868,7 +872,7 @@
             </div>
 
             <div class="work-details">
-              <p>Marketing team work across music campaigns, with clients including Atlantic Records UK.</p>
+              <p>Music campaign work with clients including Atlantic Records UK.</p>
 
               <div class="credit-tags">
                 <span>music marketing</span>
@@ -956,7 +960,7 @@
             </div>
 
             <div class="work-details">
-              <p>Studio project I Havnt Really Laughed Like This In Months Now.</p>
+              <p>Studio guitar for I Havnt Really Laughed Like This In Months Now.</p>
 
               <div class="credit-tags">
                 <span>studio</span>
@@ -977,10 +981,7 @@
             </div>
 
             <div class="work-details">
-              <p>
-                Guitar sales, customer support, product knowledge, content support,
-                logistics, copywriting, QC testing and repairs department support.
-              </p>
+              <p>Guitar sales, customer support, product knowledge, content support, logistics, QC testing and repairs department support.</p>
 
               <div class="credit-tags">
                 <span>guitar sales</span>
@@ -1048,7 +1049,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Details</h2>
-          <p class="section-note">Software, playback, live rigs and technical tools I use across sessions, rehearsals and shows.</p>
+          <p class="section-note">Software, playback, guitar rigs and live tools I use for sessions, rehearsals and shows.</p>
         </div>
 
         <div class="details-compact">
@@ -1056,7 +1057,7 @@
             <div>
               <div class="label">DAW / Production</div>
               <h3>Logic Pro X</h3>
-              <p>Production, guitar tracking, editing, session prep and playback file exports.</p>
+              <p>Guitar tracking, editing, production, session prep and playback exports.</p>
             </div>
             <div class="micro"><span>production</span><span>tracking</span><span>playback</span></div>
           </div>
@@ -1065,7 +1066,7 @@
             <div>
               <div class="label">DAW / Playback</div>
               <h3>Ableton Live</h3>
-              <p>Live playback sessions, click tracks, cues, stems and show file organisation.</p>
+              <p>Playback sessions, click tracks, cues, stems and show file organisation.</p>
             </div>
             <div class="micro"><span>clicks</span><span>cues</span><span>stems</span></div>
           </div>
@@ -1167,24 +1168,25 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Photos</h2>
-          <p class="section-note">Live shots, touring photos and stage moments.</p>
+          <p class="section-note">A tighter edit of live shots, stage photos and touring moments.</p>
         </div>
 
         <div class="gallery">
-          <div class="shot big"><img src="images/live-1.jpg" alt="Aidan Mansell live performance crowd shot" /></div>
-          <div class="shot mid"><img src="images/live-2.jpg" alt="Aidan Mansell playing guitar live on stage" /></div>
-          <div class="shot small"><img src="images/live-3.jpg" alt="Aidan Mansell close up guitar performance" /></div>
-          <div class="shot small"><img src="images/live-4.jpg" alt="Aidan Mansell silhouette guitar performance" /></div>
-          <div class="shot small"><img src="images/live-5.jpg" alt="Aidan Mansell side stage guitar performance" /></div>
-          <div class="shot big"><img src="images/live-6.jpg" alt="Aidan Mansell performing to crowd" /></div>
-          <div class="shot mid"><img src="images/live-7.jpg" alt="Aidan Mansell green stage lights performance" /></div>
-          <div class="shot small"><img src="images/live-8.jpg" alt="Aidan Mansell red guitar live performance" /></div>
-          <div class="shot small"><img src="images/live-9.jpg" alt="Aidan Mansell South Arcade performance" /></div>
-          <div class="shot small"><img src="images/live-10.jpg" alt="Aidan Mansell live green stage performance" /></div>
-          <div class="shot small"><img src="images/live-11.jpg" alt="Aidan Mansell live guitar performance" /></div>
-          <div class="shot small"><img src="images/live-12.jpg" alt="Aidan Mansell live guitar performance" /></div>
-          <div class="shot mid"><img src="images/live-13.jpg" alt="Aidan Mansell live stage performance" /></div>
-          <div class="shot small"><img src="images/live-14.jpg" alt="Aidan Mansell live guitar performance with drums" /></div>
+          <div class="shot feature"><img src="images/live-1.jpg" alt="Aidan Mansell playing guitar live" loading="lazy" decoding="async" /></div>
+          <div class="shot wide"><img src="images/live-8.jpg" alt="Aidan Mansell on stage with red guitar" loading="lazy" decoding="async" /></div>
+          <div class="shot square"><img src="images/live-12.jpg" alt="Aidan Mansell playing guitar live" loading="lazy" decoding="async" /></div>
+          <div class="shot square"><img src="images/live-5.jpg" alt="Aidan Mansell side stage" loading="lazy" decoding="async" /></div>
+
+          <div class="shot tall"><img src="images/live-4.jpg" alt="Aidan Mansell silhouetted on stage" loading="lazy" decoding="async" /></div>
+          <div class="shot feature"><img src="images/live-6.jpg" alt="Aidan Mansell performing to a crowd" loading="lazy" decoding="async" /></div>
+          <div class="shot small"><img src="images/live-14.jpg" alt="Aidan Mansell live with drums" loading="lazy" decoding="async" /></div>
+          <div class="shot small"><img src="images/live-9.jpg" alt="Aidan Mansell live performance" loading="lazy" decoding="async" /></div>
+
+          <div class="shot wide"><img src="images/live-7.jpg" alt="Aidan Mansell live under green lights" loading="lazy" decoding="async" /></div>
+          <div class="shot square"><img src="images/live-10.jpg" alt="Aidan Mansell live guitar performance" loading="lazy" decoding="async" /></div>
+          <div class="shot square"><img src="images/live-11.jpg" alt="Aidan Mansell live guitar performance" loading="lazy" decoding="async" /></div>
+          <div class="shot small"><img src="images/live-13.jpg" alt="Aidan Mansell live stage photo" loading="lazy" decoding="async" /></div>
+          <div class="shot small"><img src="images/live-3.jpg" alt="Aidan Mansell close up guitar performance" loading="lazy" decoding="async" /></div>
         </div>
       </div>
     </section>
@@ -1204,13 +1206,6 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="wrap">
-      <span>© Aidan Mansell</span>
-      <span>Session Guitarist / Guitar Technician / Producer</span>
-    </div>
-  </footer>
 
   <script>
     const videoItems = [
