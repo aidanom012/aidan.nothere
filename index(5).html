@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aidan Mansell — Session Guitarist</title>
+  <meta name="description" content="Aidan Mansell — London based session guitarist, guitar technician and producer." />
+  <style>
+    :root{
+      --bg:#f4f1ea;
+      --ink:#111111;
+      --muted:#6e6a62;
+      --line:#d8d2c6;
+      --card:#fffaf0;
+      --soft:#ebe5d8;
+      --accent:#111111;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.45;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{width:100%;display:block}
+
+    .grain{
+      position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.08;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+    header{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(12px);
+      background:rgba(244,241,234,.82);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+      text-transform:uppercase;font-size:12px;letter-spacing:.12em;
+    }
+    .brand{font-weight:800;letter-spacing:.04em}
+    .navlinks{display:flex;gap:18px;align-items:center;color:var(--muted)}
+    .navlinks a:hover{color:var(--ink)}
+
+    .hero{padding:72px 0 42px;border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:end}
+    .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--muted);margin-bottom:18px}
+    h1{
+      margin:0;
+      font-size:clamp(58px,10vw,132px);
+      letter-spacing:-.075em;
+      line-height:.82;
+      max-width:820px;
+    }
+    .intro{
+      margin:26px 0 0;
+      max-width:620px;
+      font-size:clamp(18px,2vw,25px);
+      letter-spacing:-.025em;
+    }
+    .hero-card{
+      border:1px solid var(--ink);
+      background:var(--card);
+      padding:18px;
+      min-height:350px;
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .hero-card img{height:420px;object-fit:cover;filter:contrast(1.08) saturate(.85)}
+    .meta-row{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:14px;margin-top:16px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+    .stat{background:var(--bg);padding:22px}
+    .stat b{display:block;font-size:28px;letter-spacing:-.05em}
+    .stat span{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
+
+    section{padding:70px 0;border-bottom:1px solid var(--line)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:26px}
+    h2{font-size:clamp(34px,5vw,64px);line-height:.9;letter-spacing:-.06em;margin:0;text-transform:uppercase}
+    .section-note{max-width:420px;color:var(--muted);font-size:15px}
+
+    .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .videos.more{grid-template-columns:repeat(3,1fr)}
+    .video-card{
+      border:1px solid var(--ink);
+      background:#111;color:#fff;
+      aspect-ratio:9/13;
+      padding:16px;
+      display:flex;flex-direction:column;justify-content:space-between;
+      min-height:360px;
+      position:relative;overflow:hidden;
+    }
+    .video-card:before{
+      content:"";position:absolute;inset:0;opacity:.28;
+      background:radial-gradient(circle at 50% 35%, #fff 0, transparent 16%), linear-gradient(135deg, #222, #050505);
+    }
+    .video-card > *{position:relative;z-index:1}
+    .play{width:54px;height:54px;border:1px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:18px}
+    .video-card h3{font-size:28px;letter-spacing:-.04em;margin:0 0 8px}
+    .video-card p{margin:0;color:#d6d6d6;font-size:14px}
+
+    .video-player-card{padding:0;background:#111;justify-content:flex-end}
+    .video-player-card:before{display:none}
+    .video-player-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#111}
+    .video-player-card h3{position:relative;z-index:2;margin:auto 12px 12px;background:rgba(244,241,234,.88);color:var(--ink);padding:10px 12px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}
+
+    .button{
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid var(--ink);padding:12px 16px;text-transform:uppercase;font-size:12px;letter-spacing:.12em;background:var(--ink);color:var(--bg);
+    }
+    .button.light{background:transparent;color:var(--ink)}
+
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .shot{border:1px solid var(--ink);background:var(--soft);overflow:hidden}
+    .shot img{height:100%;object-fit:cover;filter:grayscale(.05) contrast(1.08)}
+    .shot.big{grid-column:span 7;height:520px}
+    .shot.mid{grid-column:span 5;height:520px}
+    .shot.small{grid-column:span 4;height:330px}
+
+    .work-list{border-top:1px solid var(--ink)}
+    .work-item{
+      display:grid;grid-template-columns:1fr 1.3fr .45fr;gap:22px;
+      padding:20px 0;border-bottom:1px solid var(--line);align-items:start;
+    }
+    .work-item h3{margin:0;font-size:26px;letter-spacing:-.04em;text-transform:uppercase}
+    .work-item p{margin:0;color:var(--muted)}
+    .work-item .year{text-align:right;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .skill-card{border:1px solid var(--line);background:rgba(255,250,240,.45);padding:20px;min-height:180px}
+    .skill-card h3{margin:0 0 12px;font-size:20px;text-transform:uppercase;letter-spacing:-.03em}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:12px;color:var(--muted);background:rgba(255,255,255,.35)}
+
+    .contact{
+      display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end;
+    }
+    .contact h2{font-size:clamp(48px,8vw,104px)}
+    .contact-links{display:grid;gap:10px}
+    .contact-links a{border:1px solid var(--ink);padding:16px;background:var(--card);display:flex;justify-content:space-between;text-transform:uppercase;font-size:13px;letter-spacing:.08em}
+    .contact-links a:hover{background:var(--ink);color:var(--bg)}
+
+    footer{padding:24px 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px}
+
+    @media (max-width:850px){
+      .hero-grid,.contact{grid-template-columns:1fr}
+      .hero-card img{height:360px}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .videos,.skills{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .shot.big,.shot.mid,.shot.small{grid-column:auto;height:auto}
+      .work-item{grid-template-columns:1fr;gap:8px}
+      .work-item .year{text-align:left}
+      .navlinks{display:none}
+      section{padding:52px 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">Aidan Mansell</a>
+      <nav class="navlinks">
+        <a href="#work">Work</a>
+        <a href="#watch">Watch</a>
+        <a href="#details">Details</a>
+        <a href="#photos">Photos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">London based session guitarist</div>
+          <h1>Guitar for live, studio & touring.</h1>
+          <p class="intro">Session guitarist, guitar technician and producer working across pop, rock, alternative, R&B, neo soul, fusion, metal, electronic, jazz and hyper pop.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+            <a class="button" href="#work">View work</a>
+            <a class="button light" href="#watch">Watch</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <img src="images/live-5.jpg" alt="Aidan Mansell playing guitar live on stage" />
+          <div class="meta-row">
+            <span>Session / Tech / Producer</span>
+            <span>London, UK</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="wrap stats">
+      <div class="stat"><b>10+</b><span>years live playing experience</span></div>
+      <div class="stat"><b>Touring</b><span>session guitarist</span></div>
+      <div class="stat"><b>Playback</b><span>live systems</span></div>
+      <div class="stat"><b>UK</b><span>full driving licence</span></div>
+    </div>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Work</h2>
+          <p class="section-note">A quick list of the main artists, tours, festivals and studio work.</p>
+        </div>
+
+        <div class="work-list">
+          <div class="work-item">
+            <h3>Jaxn</h3>
+            <p>Session guitarist. South Arcade Arc Angel Tour and BBC Introducing Manchester.</p>
+            <div class="year">2024 — 2025</div>
+          </div>
+          <div class="work-item">
+            <h3>South Arcade</h3>
+            <p>Guitar technician across Arc Angel UK Tour, Reading & Leeds Festival 2024, I Was Here First UK Tour and As Everything Unfolds headline UK tour.</p>
+            <div class="year">2023 — 2025</div>
+          </div>
+          <div class="work-item">
+            <h3>Lizzy Farrell</h3>
+            <p>Session guitarist for As December Falls Join The Club EU/UK Tour, Misery Loves Company Festival, Burn It Down Festival and No Play Festival.</p>
+            <div class="year">2024</div>
+          </div>
+          <div class="work-item">
+            <h3>Zack Fowler</h3>
+            <p>Session guitarist for Area 11: All The Lights In The Sky Tour and WSTR 2024 Tour.</p>
+            <div class="year">2023 — 2024</div>
+          </div>
+          <div class="work-item">
+            <h3>James Walker</h3>
+            <p>Session guitarist on the studio project “I Havnt Really Laughed Like This In Months Now”.</p>
+            <div class="year">2024</div>
+          </div>
+          <div class="work-item">
+            <h3>Cascade</h3>
+            <p>Guitarist. Y Not Festival and Cascade headline UK tour.</p>
+            <div class="year">2022 — 2023</div>
+          </div>
+          <div class="work-item">
+            <h3>Start Small Studio</h3>
+            <p>Producer / session guitarist.</p>
+            <div class="year">2025 — Present</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="watch">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Watch</h2>
+          <p class="section-note">A small set of playing clips. Add your MP4s into the videos folder or swap the sources for Cloudinary links.</p>
+        </div>
+
+        <div class="videos more">
+          <div class="video-card video-player-card">
+            <video controls playsinline preload="metadata" poster="images/live-1.jpg">
+              <source src="videos/dash-out.mp4" type="video/mp4" />
+            </video>
+            <h3>Dash Out</h3>
+          </div>
+          <div class="video-card video-player-card">
+            <video controls playsinline preload="metadata" poster="images/live-3.jpg">
+              <source src="videos/bad-decisions.mp4" type="video/mp4" />
+            </video>
+            <h3>Bad Decisions</h3>
+          </div>
+          <div class="video-card video-player-card">
+            <video controls playsinline preload="metadata" poster="images/live-5.jpg">
+              <source src="videos/in-the-cut.mp4" type="video/mp4" />
+            </video>
+            <h3>In The Cut</h3>
+          </div>
+          <div class="video-card video-player-card">
+            <video controls playsinline preload="metadata" poster="images/live-2.jpg">
+              <source src="videos/positions.mp4" type="video/mp4" />
+            </video>
+            <h3>Positions</h3>
+          </div>
+          <div class="video-card video-player-card">
+            <video controls playsinline preload="metadata" poster="images/live-4.jpg">
+              <source src="videos/live-clip-1.mp4" type="video/mp4" />
+            </video>
+            <h3>Live Clip</h3>
+          </div>
+          <div class="video-card video-player-card">
+            <video controls playsinline preload="metadata" poster="images/live-6.jpg">
+              <source src="videos/live-clip-2.mp4" type="video/mp4" />
+            </video>
+            <h3>Live Clip</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="details">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Details</h2>
+          <p class="section-note">Practical live and studio skills that matter when someone is deciding whether to book you.</p>
+        </div>
+
+        <div class="skills">
+          <div class="skill-card">
+            <h3>Live & touring</h3>
+            <div class="tags">
+              <span class="tag">Touring guitar</span><span class="tag">Guitar tech</span><span class="tag">Playback</span><span class="tag">Full UK licence</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Software</h3>
+            <div class="tags">
+              <span class="tag">Logic Pro X</span><span class="tag">Ableton Live</span><span class="tag">MIDI programming</span><span class="tag">Playback systems</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Gear</h3>
+            <div class="tags">
+              <span class="tag">Quad Cortex</span><span class="tag">Kemper</span><span class="tag">Line 6</span><span class="tag">Behringer</span><span class="tag">Allen & Heath</span><span class="tag">SSL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Photos</h2>
+          <p class="section-note">Live shots, touring photos and stage moments. Swap these for higher resolution exports whenever you have them.</p>
+        </div>
+
+        <div class="gallery">
+          <div class="shot big"><img src="images/live-1.jpg" alt="Aidan Mansell playing guitar live" /></div>
+          <div class="shot mid"><img src="images/live-2.jpg" alt="Aidan Mansell on stage with guitar" /></div>
+          <div class="shot small"><img src="images/live-3.jpg" alt="Live guitar performance" /></div>
+          <div class="shot small"><img src="images/live-4.jpg" alt="Guitarist on stage" /></div>
+          <div class="shot small"><img src="images/live-5.jpg" alt="Aidan Mansell playing guitar on stage" /></div>
+          <div class="shot small"><img src="images/live-6.jpg" alt="Live stage crowd shot" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact">
+        <div>
+          <div class="eyebrow">Available for sessions, touring and studio work</div>
+          <h2>Get in touch.</h2>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:aidan.mansell@gmail.com"><span>Email</span><span>aidan.mansell@gmail.com</span></a>
+          <a href="https://www.instagram.com/aidan.nothere/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@aidan.nothere</span></a>
+          <a href="#top"><span>Location</span><span>London, UK</span></a>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© Aidan Mansell</span>
+      <span>Session Guitarist / Guitar Technician / Producer</span>
+    </div>
+  </footer>
+</body>
+</html>
