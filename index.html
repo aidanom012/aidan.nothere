@@ -7,8 +7,6 @@
   <title>Aidan Mansell — Session Guitarist</title>
   <meta name="description" content="Aidan Mansell. London based session guitarist, guitar technician, playback tech and producer." />
 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@mux/mux-player@3"></script>
-
   <style>
     :root{
       --bg:#f4f1ea;
@@ -81,9 +79,7 @@
       color:var(--muted);
     }
 
-    .navlinks a:hover{
-      color:var(--ink);
-    }
+    .navlinks a:hover{color:var(--ink)}
 
     .hero{
       padding:72px 0 42px;
@@ -168,9 +164,7 @@
       color:var(--ink);
     }
 
-    .button:hover{
-      opacity:.82;
-    }
+    .button:hover{opacity:.82}
 
     .stats{
       display:grid;
@@ -316,9 +310,7 @@
       letter-spacing:.13em;
     }
 
-    .work-details{
-      padding:18px;
-    }
+    .work-details{padding:18px}
 
     .work-item p{
       margin:0;
@@ -381,9 +373,7 @@
       cursor:grab;
     }
 
-    .video-stage:active{
-      cursor:grabbing;
-    }
+    .video-stage:active{cursor:grabbing}
 
     .video-track{
       display:flex;
@@ -418,30 +408,16 @@
       transform:scale(.94) translateY(10px);
     }
 
-    .video-thumb{
+    .video-thumb,
+    .video-frame{
       position:absolute;
       inset:0;
       width:100%;
       height:100%;
       object-fit:cover;
       display:block;
+      border:0;
       background:#111;
-    }
-
-    mux-player{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      display:block;
-      background:#111;
-      --media-object-fit:cover;
-      --media-object-position:center;
-      --controls-backdrop-color:rgba(0,0,0,.3);
-      --media-control-background:rgba(0,0,0,.18);
-      --media-control-hover-background:rgba(0,0,0,.32);
-      --media-primary-color:#f4f1ea;
-      --media-secondary-color:#111111;
     }
 
     .video-loading{
@@ -617,9 +593,7 @@
       align-items:end;
     }
 
-    .contact h2{
-      font-size:clamp(48px,8vw,104px);
-    }
+    .contact h2{font-size:clamp(48px,8vw,104px)}
 
     .contact-links{
       display:grid;
@@ -658,86 +632,32 @@
     }
 
     @media (max-width:1000px){
-      .details-compact{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .work-item{
-        grid-template-columns:1fr;
-      }
-
-      .work-main{
-        border-right:0;
-        border-bottom:1px solid var(--line);
-      }
-
-      .work-year{
-        border-left:0;
-        border-top:1px solid var(--line);
-        justify-content:flex-start;
-        text-align:left;
-      }
+      .details-compact{grid-template-columns:repeat(2,1fr)}
+      .work-item{grid-template-columns:1fr}
+      .work-main{border-right:0;border-bottom:1px solid var(--line)}
+      .work-year{border-left:0;border-top:1px solid var(--line);justify-content:flex-start;text-align:left}
     }
 
     @media (max-width:850px){
       .hero-grid,
-      .contact{
-        grid-template-columns:1fr;
-      }
-
-      .hero-card img{
-        height:360px;
-      }
-
-      .stats{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .about-strip{
-        grid-template-columns:1fr;
-      }
-
-      .gallery{
-        grid-template-columns:1fr;
-      }
-
+      .contact{grid-template-columns:1fr}
+      .hero-card img{height:360px}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .about-strip{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
       .shot.big,
       .shot.mid,
-      .shot.small{
-        grid-column:auto;
-        height:auto;
-      }
-
-      .navlinks{
-        display:none;
-      }
-
-      section{
-        padding:52px 0;
-      }
-
-      .carousel-controls{
-        align-items:flex-start;
-        flex-direction:column;
-      }
-
-      .dots{
-        justify-content:flex-start;
-      }
+      .shot.small{grid-column:auto;height:auto}
+      .navlinks{display:none}
+      section{padding:52px 0}
+      .carousel-controls{align-items:flex-start;flex-direction:column}
+      .dots{justify-content:flex-start}
     }
 
     @media (max-width:650px){
-      .details-compact{
-        grid-template-columns:1fr;
-      }
-
-      footer .wrap{
-        flex-direction:column;
-      }
-
-      .contact-links a{
-        flex-direction:column;
-      }
+      .details-compact{grid-template-columns:1fr}
+      footer .wrap{flex-direction:column}
+      .contact-links a{flex-direction:column}
     }
   </style>
 </head>
@@ -1262,6 +1182,9 @@
           <div class="shot small"><img src="images/live-9.jpg" alt="Aidan Mansell South Arcade performance" /></div>
           <div class="shot small"><img src="images/live-10.jpg" alt="Aidan Mansell live green stage performance" /></div>
           <div class="shot small"><img src="images/live-11.jpg" alt="Aidan Mansell live guitar performance" /></div>
+          <div class="shot small"><img src="images/live-12.jpg" alt="Aidan Mansell live guitar performance" /></div>
+          <div class="shot mid"><img src="images/live-13.jpg" alt="Aidan Mansell live stage performance" /></div>
+          <div class="shot small"><img src="images/live-14.jpg" alt="Aidan Mansell live guitar performance with drums" /></div>
         </div>
       </div>
     </section>
@@ -1315,7 +1238,11 @@
     }
 
     function muxThumb(playbackId){
-      return `https://image.mux.com/${playbackId}/thumbnail.webp?time=0&width=800&fit_mode=crop`;
+      return `https://image.mux.com/${playbackId}/thumbnail.jpg?time=0&width=600&fit_mode=crop`;
+    }
+
+    function muxPlayer(playbackId){
+      return `https://player.mux.com/${playbackId}?metadata-video-title=Aidan%20Mansell%20clip&accent-color=%23f4f1ea`;
     }
 
     function buildCarousel(){
@@ -1352,19 +1279,17 @@
         const item = videoItems[index];
 
         if(index === activeIndex){
-          const existingPlayer = slide.querySelector("mux-player");
+          const existingFrame = slide.querySelector("iframe");
 
-          if(!existingPlayer){
+          if(!existingFrame){
             slide.innerHTML = `
-              <mux-player
-                playback-id="${item.playbackId}"
-                metadata-video-title="Aidan Mansell clip ${index + 1}"
-                stream-type="on-demand"
-                accent-color="#f4f1ea"
-                forward-seek-offset="10"
-                backward-seek-offset="10"
-                playsinline
-              ></mux-player>
+              <iframe
+                class="video-frame"
+                src="${muxPlayer(item.playbackId)}"
+                title="Aidan Mansell video clip ${index + 1}"
+                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen
+              ></iframe>
             `;
           }
         } else {
