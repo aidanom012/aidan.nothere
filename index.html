@@ -7,6 +7,8 @@
   <title>Aidan Mansell — Session Guitarist</title>
   <meta name="description" content="Aidan Mansell — London based session guitarist, guitar technician and producer." />
 
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@mux/mux-player@3"></script>
+
   <style>
     :root{
       --bg:#f4f1ea;
@@ -312,12 +314,18 @@
       transform:scale(.94) translateY(10px);
     }
 
-    .video-slide video{
+    mux-player{
       width:100%;
       height:100%;
-      object-fit:cover;
       display:block;
       background:#111;
+      --media-object-fit:cover;
+      --media-object-position:center;
+      --controls-backdrop-color:rgba(0,0,0,.35);
+      --media-control-background:rgba(0,0,0,.18);
+      --media-control-hover-background:rgba(0,0,0,.32);
+      --media-primary-color:#f4f1ea;
+      --media-secondary-color:#111111;
     }
 
     .carousel-controls{
@@ -601,7 +609,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Watch</h2>
-          <p class="section-note">Add as many MP4s as you want into the videos folder. The carousel handles the rest.</p>
+          <p class="section-note">A short carousel of live and playing clips.</p>
         </div>
 
         <div class="watch-shell" aria-label="Video carousel">
@@ -615,7 +623,7 @@
               <button class="carousel-btn" id="nextVideo" type="button" aria-label="Next video">→</button>
             </div>
             <div class="dots" id="videoDots" aria-label="Video navigation dots"></div>
-            <div class="carousel-count" id="videoCount">01 / 01</div>
+            <div class="carousel-count" id="videoCount">01 / 06</div>
           </div>
         </div>
       </div>
@@ -693,14 +701,12 @@
 
   <script>
     const videoItems = [
-      { src: "videos/video-1.mp4", poster: "images/live-1.jpg" },
-      { src: "videos/video-2.mp4", poster: "images/live-2.jpg" },
-      { src: "videos/video-3.mp4", poster: "images/live-3.jpg" },
-      { src: "videos/video-4.mp4", poster: "images/live-4.jpg" },
-      { src: "videos/video-5.mp4", poster: "images/live-5.jpg" },
-      { src: "videos/video-6.mp4", poster: "images/live-6.jpg" },
-      { src: "videos/video-7.mp4", poster: "images/live-7.jpg" },
-      { src: "videos/video-8.mp4", poster: "images/live-8.jpg" }
+      { playbackId: "MSv8ow9h9e9dtoT02RJWi01sPH98DqYKdN1xdXXoCoWNI" },
+      { playbackId: "fXogupp27a402VtojlPAP8KmoHtOW3eSKKJkwB6liXIs" },
+      { playbackId: "3oM00bx8DJ01WVeSrZ1rBHnCGt7x01EDinT2yoFj6Fmido" },
+      { playbackId: "WZFBswhStjPED87pePirmR00fPIOtHW9vElxUNZDy00q00" },
+      { playbackId: "o3SUEQnAKLHahw1WyyKJlnk7fWtKyG2ahKty5Jz86XE" },
+      { playbackId: "tufJEABNMT01wLGkgkGGk5j6DgVCyVOONDVeAUlrx4Is" }
     ];
 
     const track = document.getElementById("videoTrack");
@@ -726,9 +732,15 @@
         const slide = document.createElement("div");
         slide.className = "video-slide";
         slide.innerHTML = `
-          <video controls playsinline preload="metadata" poster="${item.poster}">
-            <source src="${item.src}" type="video/mp4" />
-          </video>
+          <mux-player
+            playback-id="${item.playbackId}"
+            metadata-video-title="Aidan Mansell clip ${index + 1}"
+            stream-type="on-demand"
+            accent-color="#f4f1ea"
+            forward-seek-offset="10"
+            backward-seek-offset="10"
+            playsinline
+          ></mux-player>
         `;
         slide.addEventListener("click", () => goToVideo(index));
         track.appendChild(slide);
@@ -744,6 +756,15 @@
       updateCarousel(false);
     }
 
+    function pauseInactivePlayers(){
+      const players = [...track.querySelectorAll("mux-player")];
+      players.forEach((player, index) => {
+        if(index !== activeIndex && typeof player.pause === "function"){
+          player.pause();
+        }
+      });
+    }
+
     function updateCarousel(animate = true){
       const slides = [...track.querySelectorAll(".video-slide")];
       const dotButtons = [...dots.querySelectorAll(".dot")];
@@ -751,12 +772,9 @@
       slides.forEach((slide, index) => {
         slide.classList.toggle("is-active", index === activeIndex);
         slide.classList.toggle("is-near", Math.abs(index - activeIndex) === 1);
-
-        const video = slide.querySelector("video");
-        if(index !== activeIndex && video){
-          video.pause();
-        }
       });
+
+      pauseInactivePlayers();
 
       dotButtons.forEach((dot, index) => {
         dot.classList.toggle("is-active", index === activeIndex);
