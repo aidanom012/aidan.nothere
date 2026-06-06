@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Aidan Mansell — Session Guitarist</title>
-  <meta name="description" content="Aidan Mansell — London based session guitarist, guitar technician and producer." />
-
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@mux/mux-player@3"></script>
+  <meta name="description" content="Aidan Mansell. London based session guitarist, guitar technician, playback tech and producer." />
 
   <style>
     :root{
@@ -43,7 +41,11 @@
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
 
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 22px;
+    }
 
     header{
       position:sticky;
@@ -65,12 +67,33 @@
       letter-spacing:.12em;
     }
 
-    .brand{font-weight:800;letter-spacing:.04em}
-    .navlinks{display:flex;gap:18px;align-items:center;color:var(--muted)}
-    .navlinks a:hover{color:var(--ink)}
+    .brand{
+      font-weight:800;
+      letter-spacing:.04em;
+    }
 
-    .hero{padding:72px 0 42px;border-bottom:1px solid var(--line)}
-    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:end}
+    .navlinks{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      color:var(--muted);
+    }
+
+    .navlinks a:hover{
+      color:var(--ink);
+    }
+
+    .hero{
+      padding:72px 0 42px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
+      align-items:end;
+    }
 
     .eyebrow{
       text-transform:uppercase;
@@ -138,8 +161,14 @@
       color:var(--bg);
     }
 
-    .button.light{background:transparent;color:var(--ink)}
-    .button:hover{opacity:.82}
+    .button.light{
+      background:transparent;
+      color:var(--ink);
+    }
+
+    .button:hover{
+      opacity:.82;
+    }
 
     .stats{
       display:grid;
@@ -149,11 +178,30 @@
       border-bottom:1px solid var(--line);
     }
 
-    .stat{background:var(--bg);padding:22px}
-    .stat b{display:block;font-size:28px;letter-spacing:-.05em}
-    .stat span{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
+    .stat{
+      background:var(--bg);
+      padding:22px;
+    }
 
-    section{padding:70px 0;border-bottom:1px solid var(--line)}
+    .stat b{
+      display:block;
+      font-size:28px;
+      letter-spacing:-.05em;
+    }
+
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      margin-top:6px;
+    }
+
+    section{
+      padding:70px 0;
+      border-bottom:1px solid var(--line);
+    }
 
     .section-head{
       display:flex;
@@ -171,7 +219,11 @@
       text-transform:uppercase;
     }
 
-    .section-note{max-width:420px;color:var(--muted);font-size:15px}
+    .section-note{
+      max-width:420px;
+      color:var(--muted);
+      font-size:15px;
+    }
 
     .about-strip{
       margin:0 0 22px;
@@ -183,11 +235,32 @@
       background-color:var(--ink);
     }
 
-    .about-strip > div{background:var(--card);padding:18px}
-    .about-strip h3{margin:0;font-size:clamp(26px,3.4vw,44px);line-height:.92;letter-spacing:-.055em;text-transform:uppercase}
-    .about-strip p{margin:0;color:var(--muted);font-size:16px;max-width:760px}
+    .about-strip > div{
+      background:var(--card);
+      padding:18px;
+    }
 
-    .about-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .about-strip h3{
+      margin:0;
+      font-size:clamp(26px,3.4vw,44px);
+      line-height:.92;
+      letter-spacing:-.055em;
+      text-transform:uppercase;
+    }
+
+    .about-strip p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      max-width:760px;
+    }
+
+    .about-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
 
     .tag{
       display:inline-flex;
@@ -201,7 +274,10 @@
       letter-spacing:.08em;
     }
 
-    .work-list{display:grid;gap:12px}
+    .work-list{
+      display:grid;
+      gap:12px;
+    }
 
     .work-item{
       border:1px solid var(--ink);
@@ -222,10 +298,33 @@
       gap:18px;
     }
 
-    .work-item h3{margin:0;font-size:28px;letter-spacing:-.055em;line-height:.9;text-transform:uppercase}
-    .work-role{margin-top:8px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.13em}
-    .work-details{padding:18px}
-    .work-item p{margin:0;color:var(--muted);font-size:15px;line-height:1.45;max-width:720px}
+    .work-item h3{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-.055em;
+      line-height:.9;
+      text-transform:uppercase;
+    }
+
+    .work-role{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+    }
+
+    .work-details{
+      padding:18px;
+    }
+
+    .work-item p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.45;
+      max-width:720px;
+    }
 
     .work-year{
       padding:18px;
@@ -241,7 +340,12 @@
       white-space:nowrap;
     }
 
-    .credit-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+    .credit-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:14px;
+    }
 
     .credit-tags span{
       border:1px solid var(--line);
@@ -254,16 +358,35 @@
       background:rgba(255,255,255,.35);
     }
 
-    .credit-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em}
+    .credit-label{
+      font-size:11px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+    }
 
-    .work-item.featured{background:var(--ink);color:var(--bg)}
+    .work-item.featured{
+      background:var(--ink);
+      color:var(--bg);
+    }
+
     .work-item.featured .work-main,
-    .work-item.featured .work-year{border-color:rgba(244,241,234,.2)}
+    .work-item.featured .work-year{
+      border-color:rgba(244,241,234,.2);
+    }
+
     .work-item.featured p,
     .work-item.featured .work-role,
     .work-item.featured .credit-label,
-    .work-item.featured .work-year{color:rgba(244,241,234,.72)}
-    .work-item.featured .credit-tags span{border-color:rgba(244,241,234,.24);color:var(--bg);background:rgba(244,241,234,.08)}
+    .work-item.featured .work-year{
+      color:rgba(244,241,234,.72);
+    }
+
+    .work-item.featured .credit-tags span{
+      border-color:rgba(244,241,234,.24);
+      color:var(--bg);
+      background:rgba(244,241,234,.08);
+    }
 
     .watch-shell{
       position:relative;
@@ -279,7 +402,9 @@
       cursor:grab;
     }
 
-    .video-stage:active{cursor:grabbing}
+    .video-stage:active{
+      cursor:grabbing;
+    }
 
     .video-track{
       display:flex;
@@ -314,18 +439,36 @@
       transform:scale(.94) translateY(10px);
     }
 
-    mux-player{
+    .video-thumb,
+    .video-frame{
       width:100%;
       height:100%;
+      object-fit:cover;
       display:block;
+      border:0;
       background:#111;
-      --media-object-fit:cover;
-      --media-object-position:center;
-      --controls-backdrop-color:rgba(0,0,0,.35);
-      --media-control-background:rgba(0,0,0,.18);
-      --media-control-hover-background:rgba(0,0,0,.32);
-      --media-primary-color:#f4f1ea;
-      --media-secondary-color:#111111;
+    }
+
+    .video-thumb{
+      position:absolute;
+      inset:0;
+    }
+
+    .video-frame{
+      position:absolute;
+      inset:0;
+    }
+
+    .video-loading{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      color:rgba(244,241,234,.72);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      background:rgba(0,0,0,.18);
     }
 
     .carousel-controls{
@@ -338,7 +481,10 @@
       margin-top:18px;
     }
 
-    .arrow-group{display:flex;gap:8px}
+    .arrow-group{
+      display:flex;
+      gap:8px;
+    }
 
     .carousel-btn{
       appearance:none;
@@ -354,7 +500,10 @@
       line-height:1;
     }
 
-    .carousel-btn:hover{background:var(--ink);color:var(--bg)}
+    .carousel-btn:hover{
+      background:var(--ink);
+      color:var(--bg);
+    }
 
     .carousel-count{
       font-size:12px;
@@ -382,9 +531,16 @@
       opacity:.45;
     }
 
-    .dot.is-active{background:var(--ink);opacity:1}
+    .dot.is-active{
+      background:var(--ink);
+      opacity:1;
+    }
 
-    .details-compact{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .details-compact{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+    }
 
     .detail-card{
       border:1px solid var(--ink);
@@ -396,11 +552,35 @@
       justify-content:space-between;
     }
 
-    .detail-card .label{color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
-    .detail-card h3{margin:0 0 8px;font-size:22px;line-height:.95;letter-spacing:-.045em;text-transform:uppercase}
-    .detail-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.35}
+    .detail-card .label{
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
 
-    .micro{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+    .detail-card h3{
+      margin:0 0 8px;
+      font-size:22px;
+      line-height:.95;
+      letter-spacing:-.045em;
+      text-transform:uppercase;
+    }
+
+    .detail-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.35;
+    }
+
+    .micro{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
 
     .micro span{
       border:1px solid var(--line);
@@ -412,16 +592,54 @@
       white-space:nowrap;
     }
 
-    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    .shot{border:1px solid var(--ink);background:var(--soft);overflow:hidden}
-    .shot img{height:100%;object-fit:cover;filter:grayscale(.05) contrast(1.08)}
-    .shot.big{grid-column:span 7;height:520px}
-    .shot.mid{grid-column:span 5;height:520px}
-    .shot.small{grid-column:span 4;height:330px}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:14px;
+    }
 
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end}
-    .contact h2{font-size:clamp(48px,8vw,104px)}
-    .contact-links{display:grid;gap:10px}
+    .shot{
+      border:1px solid var(--ink);
+      background:var(--soft);
+      overflow:hidden;
+    }
+
+    .shot img{
+      height:100%;
+      object-fit:cover;
+      filter:grayscale(.05) contrast(1.08);
+    }
+
+    .shot.big{
+      grid-column:span 7;
+      height:520px;
+    }
+
+    .shot.mid{
+      grid-column:span 5;
+      height:520px;
+    }
+
+    .shot.small{
+      grid-column:span 4;
+      height:330px;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:end;
+    }
+
+    .contact h2{
+      font-size:clamp(48px,8vw,104px);
+    }
+
+    .contact-links{
+      display:grid;
+      gap:10px;
+    }
 
     .contact-links a{
       border:1px solid var(--ink);
@@ -435,38 +653,111 @@
       letter-spacing:.08em;
     }
 
-    .contact-links a:hover{background:var(--ink);color:var(--bg)}
+    .contact-links a:hover{
+      background:var(--ink);
+      color:var(--bg);
+    }
 
-    footer{padding:24px 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
-    footer .wrap{display:flex;justify-content:space-between;gap:20px}
+    footer{
+      padding:24px 0;
+      color:var(--muted);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+    }
+
+    footer .wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
 
     @media (max-width:1000px){
-      .details-compact{grid-template-columns:repeat(2,1fr)}
-      .work-item{grid-template-columns:1fr}
-      .work-main{border-right:0;border-bottom:1px solid var(--line)}
-      .work-year{border-left:0;border-top:1px solid var(--line);justify-content:flex-start;text-align:left}
+      .details-compact{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .work-item{
+        grid-template-columns:1fr;
+      }
+
+      .work-main{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .work-year{
+        border-left:0;
+        border-top:1px solid var(--line);
+        justify-content:flex-start;
+        text-align:left;
+      }
+
       .work-item.featured .work-main,
-      .work-item.featured .work-year{border-color:rgba(244,241,234,.2)}
+      .work-item.featured .work-year{
+        border-color:rgba(244,241,234,.2);
+      }
     }
 
     @media (max-width:850px){
       .hero-grid,
-      .contact{grid-template-columns:1fr}
-      .hero-card img{height:360px}
-      .stats{grid-template-columns:repeat(2,1fr)}
-      .about-strip{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr}
-      .shot.big,.shot.mid,.shot.small{grid-column:auto;height:auto}
-      .navlinks{display:none}
-      section{padding:52px 0}
-      .carousel-controls{align-items:flex-start;flex-direction:column}
-      .dots{justify-content:flex-start}
+      .contact{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card img{
+        height:360px;
+      }
+
+      .stats{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .about-strip{
+        grid-template-columns:1fr;
+      }
+
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .shot.big,
+      .shot.mid,
+      .shot.small{
+        grid-column:auto;
+        height:auto;
+      }
+
+      .navlinks{
+        display:none;
+      }
+
+      section{
+        padding:52px 0;
+      }
+
+      .carousel-controls{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .dots{
+        justify-content:flex-start;
+      }
     }
 
     @media (max-width:650px){
-      .details-compact{grid-template-columns:1fr}
-      footer .wrap{flex-direction:column}
-      .contact-links a{flex-direction:column}
+      .details-compact{
+        grid-template-columns:1fr;
+      }
+
+      footer .wrap{
+        flex-direction:column;
+      }
+
+      .contact-links a{
+        flex-direction:column;
+      }
     }
   </style>
 </head>
@@ -477,6 +768,7 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="#top">Aidan Mansell</a>
+
       <nav class="navlinks">
         <a href="#work">Work</a>
         <a href="#watch">Watch</a>
@@ -492,8 +784,14 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">London based session guitarist</div>
+
           <h1>Guitar for live, studio & touring.</h1>
-          <p class="intro">Session guitarist, guitar technician and producer working across pop, rock, alternative, R&B, neo soul, fusion, metal, electronic, jazz and hyper pop.</p>
+
+          <p class="intro">
+            Session guitarist, guitar technician, playback tech and producer working across pop, rock,
+            alternative, R&B, neo soul, fusion, metal, electronic, jazz and hyper pop.
+          </p>
+
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
             <a class="button" href="#work">View work</a>
             <a class="button light" href="#watch">Watch</a>
@@ -502,6 +800,7 @@
 
         <aside class="hero-card">
           <img src="images/hero.jpg" alt="Aidan Mansell playing guitar live on stage" />
+
           <div class="meta-row">
             <span>Session / Tech / Producer</span>
             <span>London, UK</span>
@@ -511,10 +810,25 @@
     </section>
 
     <div class="wrap stats">
-      <div class="stat"><b>10+</b><span>years live playing experience</span></div>
-      <div class="stat"><b>Touring</b><span>session guitarist</span></div>
-      <div class="stat"><b>Playback</b><span>live systems</span></div>
-      <div class="stat"><b>UK</b><span>full driving licence</span></div>
+      <div class="stat">
+        <b>10+</b>
+        <span>years live playing experience</span>
+      </div>
+
+      <div class="stat">
+        <b>Touring</b>
+        <span>session guitarist</span>
+      </div>
+
+      <div class="stat">
+        <b>Playback</b>
+        <span>live systems</span>
+      </div>
+
+      <div class="stat">
+        <b>UK</b>
+        <span>full driving licence</span>
+      </div>
     </div>
 
     <section id="work">
@@ -529,78 +843,278 @@
             <div class="eyebrow">About</div>
             <h3>Sydney raised, UK based.</h3>
           </div>
+
           <div>
-            <p>I moved to the UK from Sydney, Australia in 2022. Since then I’ve worked across live shows, tours, studio sessions, guitar tech, playback prep and production — mainly around alternative, pop and heavier guitar-focused music.</p>
+            <p>
+              I moved to the UK from Sydney, Australia in 2022. Since then I’ve worked across
+              live shows, tours, studio sessions, guitar tech, playback, production and music marketing.
+            </p>
+
             <div class="about-chips">
-              <span class="tag">Sydney → London</span>
-              <span class="tag">Session guitar</span>
+              <span class="tag">Sydney to London</span>
+              <span class="tag">Session guitarist</span>
               <span class="tag">Guitar tech</span>
-              <span class="tag">Playback prep</span>
+              <span class="tag">Playback tech</span>
               <span class="tag">Production</span>
             </div>
           </div>
         </div>
 
         <div class="work-list">
+
           <div class="work-item featured">
-            <div class="work-main"><div><h3>South Arcade</h3><div class="work-role">Guitar technician</div></div><div class="credit-label">Tour / Festival / Tech</div></div>
-            <div class="work-details"><p>Arc Angel UK Tour. Reading & Leeds Festival 2024. I Was Here First UK Tour. As Everything Unfolds headline UK tour.</p><div class="credit-tags"><span>guitar tech</span><span>UK tour</span><span>Reading & Leeds</span><span>headline tour</span></div></div>
-            <div class="work-year">2023 — 2025</div>
+            <div class="work-main">
+              <div>
+                <h3>South Arcade</h3>
+                <div class="work-role">Guitar technician</div>
+              </div>
+              <div class="credit-label">Tour / Festival / Tech</div>
+            </div>
+
+            <div class="work-details">
+              <p>
+                Arc Angel UK Tour. Reading & Leeds Festival 2024. I Was Here First UK Tour.
+                As Everything Unfolds headline UK tour.
+              </p>
+
+              <div class="credit-tags">
+                <span>guitar tech</span>
+                <span>UK tour</span>
+                <span>Reading and Leeds</span>
+                <span>headline tour</span>
+              </div>
+            </div>
+
+            <div class="work-year">2023 to 2025</div>
           </div>
 
           <div class="work-item">
-            <div class="work-main"><div><h3>Jaxn</h3><div class="work-role">Session guitarist</div></div><div class="credit-label">Live / Session</div></div>
-            <div class="work-details"><p>South Arcade: Arc Angel Tour. BBC Introducing: Manchester.</p><div class="credit-tags"><span>touring</span><span>BBC Introducing</span><span>live guitar</span></div></div>
-            <div class="work-year">2024 — 2025</div>
+            <div class="work-main">
+              <div>
+                <h3>Jaxn</h3>
+                <div class="work-role">Session guitarist</div>
+              </div>
+              <div class="credit-label">Live / Session</div>
+            </div>
+
+            <div class="work-details">
+              <p>South Arcade Arc Angel Tour. BBC Introducing Manchester.</p>
+
+              <div class="credit-tags">
+                <span>touring</span>
+                <span>BBC Introducing</span>
+                <span>live guitar</span>
+              </div>
+            </div>
+
+            <div class="work-year">2024 to 2025</div>
           </div>
 
           <div class="work-item">
-            <div class="work-main"><div><h3>Lizzy Farrell</h3><div class="work-role">Session guitarist</div></div><div class="credit-label">Tour / Festival</div></div>
-            <div class="work-details"><p>As December Falls: Join The Club EU/UK Tour. Misery Loves Company Festival. Burn It Down Festival. No Play Festival.</p><div class="credit-tags"><span>EU/UK tour</span><span>festivals</span><span>session guitar</span></div></div>
+            <div class="work-main">
+              <div>
+                <h3>Lizzy Farrell</h3>
+                <div class="work-role">Session guitarist</div>
+              </div>
+              <div class="credit-label">Tour / Festival</div>
+            </div>
+
+            <div class="work-details">
+              <p>
+                As December Falls Join The Club EU and UK Tour. Misery Loves Company Festival.
+                Burn It Down Festival. No Play Festival.
+              </p>
+
+              <div class="credit-tags">
+                <span>EU and UK tour</span>
+                <span>festivals</span>
+                <span>session guitar</span>
+              </div>
+            </div>
+
             <div class="work-year">2024</div>
           </div>
 
           <div class="work-item">
-            <div class="work-main"><div><h3>Entertainment Nation</h3><div class="work-role">Function band guitarist</div></div><div class="credit-label">Function / Dep work</div></div>
-            <div class="work-details"><p>Function band work across live events, weddings and private performances.</p><div class="credit-tags"><span>function band</span><span>live sets</span><span>dep work</span><span>events</span></div></div>
-            <div class="work-year">2025 — Present</div>
+            <div class="work-main">
+              <div>
+                <h3>Entertainment Nation</h3>
+                <div class="work-role">Function band guitarist</div>
+              </div>
+              <div class="credit-label">Function / Dep work</div>
+            </div>
+
+            <div class="work-details">
+              <p>Function band work across live events, weddings and private performances.</p>
+
+              <div class="credit-tags">
+                <span>function band</span>
+                <span>live sets</span>
+                <span>dep work</span>
+                <span>events</span>
+              </div>
+            </div>
+
+            <div class="work-year">2025 to Present</div>
           </div>
 
           <div class="work-item">
-            <div class="work-main"><div><h3>Zack Fowler</h3><div class="work-role">Session guitarist</div></div><div class="credit-label">Touring</div></div>
-            <div class="work-details"><p>Area 11: All The Lights In The Sky Tour. WSTR 2024 Tour.</p><div class="credit-tags"><span>touring</span><span>live guitar</span><span>session guitar</span></div></div>
-            <div class="work-year">2023 — 2024</div>
+            <div class="work-main">
+              <div>
+                <h3>JDW Media</h3>
+                <div class="work-role">Marketing team</div>
+              </div>
+              <div class="credit-label">Music marketing</div>
+            </div>
+
+            <div class="work-details">
+              <p>Marketing team work across music campaigns, with clients including Atlantic Records UK.</p>
+
+              <div class="credit-tags">
+                <span>music marketing</span>
+                <span>campaigns</span>
+                <span>Atlantic Records UK</span>
+              </div>
+            </div>
+
+            <div class="work-year">2026 to Present</div>
           </div>
 
           <div class="work-item">
-            <div class="work-main"><div><h3>Mayah</h3><div class="work-role">Session guitarist</div></div><div class="credit-label">Festival</div></div>
-            <div class="work-details"><p>The Great Prescape Festival, Brighton.</p><div class="credit-tags"><span>festival</span><span>Brighton</span><span>live guitar</span></div></div>
+            <div class="work-main">
+              <div>
+                <h3>Zack Fowler</h3>
+                <div class="work-role">Session guitarist</div>
+              </div>
+              <div class="credit-label">Touring</div>
+            </div>
+
+            <div class="work-details">
+              <p>Area 11 All The Lights In The Sky Tour. WSTR 2024 Tour.</p>
+
+              <div class="credit-tags">
+                <span>touring</span>
+                <span>live guitar</span>
+                <span>session guitar</span>
+              </div>
+            </div>
+
+            <div class="work-year">2023 to 2024</div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-main">
+              <div>
+                <h3>Mayah</h3>
+                <div class="work-role">Session guitarist</div>
+              </div>
+              <div class="credit-label">Festival</div>
+            </div>
+
+            <div class="work-details">
+              <p>The Great Prescape Festival, Brighton.</p>
+
+              <div class="credit-tags">
+                <span>festival</span>
+                <span>Brighton</span>
+                <span>live guitar</span>
+              </div>
+            </div>
+
             <div class="work-year">2026</div>
           </div>
 
           <div class="work-item">
-            <div class="work-main"><div><h3>Start Small Studio</h3><div class="work-role">Producer / session guitarist</div></div><div class="credit-label">Studio</div></div>
-            <div class="work-details"><p>Studio work, guitar tracking, production support and session guitar.</p><div class="credit-tags"><span>studio</span><span>production</span><span>session guitar</span></div></div>
-            <div class="work-year">2025 — Present</div>
+            <div class="work-main">
+              <div>
+                <h3>Start Small Studio</h3>
+                <div class="work-role">Producer / session guitarist</div>
+              </div>
+              <div class="credit-label">Studio</div>
+            </div>
+
+            <div class="work-details">
+              <p>Studio work, guitar tracking, production support and session guitar.</p>
+
+              <div class="credit-tags">
+                <span>studio</span>
+                <span>production</span>
+                <span>session guitar</span>
+              </div>
+            </div>
+
+            <div class="work-year">2025 to Present</div>
           </div>
 
           <div class="work-item">
-            <div class="work-main"><div><h3>James Walker</h3><div class="work-role">Session guitarist</div></div><div class="credit-label">Studio</div></div>
-            <div class="work-details"><p>Studio project: “I Havnt Really Laughed Like This In Months Now”.</p><div class="credit-tags"><span>studio</span><span>session guitar</span></div></div>
+            <div class="work-main">
+              <div>
+                <h3>James Walker</h3>
+                <div class="work-role">Session guitarist</div>
+              </div>
+              <div class="credit-label">Studio</div>
+            </div>
+
+            <div class="work-details">
+              <p>Studio project I Havnt Really Laughed Like This In Months Now.</p>
+
+              <div class="credit-tags">
+                <span>studio</span>
+                <span>session guitar</span>
+              </div>
+            </div>
+
             <div class="work-year">2024</div>
           </div>
 
           <div class="work-item">
-            <div class="work-main"><div><h3>Andertons</h3><div class="work-role">Guitar sales rep</div></div><div class="credit-label">Industry / Retail</div></div>
-            <div class="work-details"><p>Guitar sales, customer support, product knowledge, content support, logistics, copywriting, QC testing and repairs department support.</p><div class="credit-tags"><span>guitar sales</span><span>technical support</span><span>repairs</span><span>QC</span></div></div>
-            <div class="work-year">2022 — 2024</div>
+            <div class="work-main">
+              <div>
+                <h3>Andertons</h3>
+                <div class="work-role">Guitar sales rep</div>
+              </div>
+              <div class="credit-label">Industry / Retail</div>
+            </div>
+
+            <div class="work-details">
+              <p>
+                Guitar sales, customer support, product knowledge, content support,
+                logistics, copywriting, QC testing and repairs department support.
+              </p>
+
+              <div class="credit-tags">
+                <span>guitar sales</span>
+                <span>technical support</span>
+                <span>repairs</span>
+                <span>QC</span>
+              </div>
+            </div>
+
+            <div class="work-year">2022 to 2024</div>
           </div>
 
           <div class="work-item">
-            <div class="work-main"><div><h3>Cascade</h3><div class="work-role">Guitarist</div></div><div class="credit-label">Band / Touring</div></div>
-            <div class="work-details"><p>Y Not Festival. Cascade headline UK tour.</p><div class="credit-tags"><span>festival</span><span>headline tour</span><span>live guitar</span></div></div>
-            <div class="work-year">2022 — 2023</div>
+            <div class="work-main">
+              <div>
+                <h3>Cascade</h3>
+                <div class="work-role">Guitarist</div>
+              </div>
+              <div class="credit-label">Band / Touring</div>
+            </div>
+
+            <div class="work-details">
+              <p>Y Not Festival. Cascade headline UK tour.</p>
+
+              <div class="credit-tags">
+                <span>festival</span>
+                <span>headline tour</span>
+                <span>live guitar</span>
+              </div>
+            </div>
+
+            <div class="work-year">2022 to 2023</div>
           </div>
+
         </div>
       </div>
     </section>
@@ -609,7 +1123,6 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Watch</h2>
-          <p class="section-note">A short carousel of live and playing clips.</p>
         </div>
 
         <div class="watch-shell" aria-label="Video carousel">
@@ -622,7 +1135,9 @@
               <button class="carousel-btn" id="prevVideo" type="button" aria-label="Previous video">←</button>
               <button class="carousel-btn" id="nextVideo" type="button" aria-label="Next video">→</button>
             </div>
+
             <div class="dots" id="videoDots" aria-label="Video navigation dots"></div>
+
             <div class="carousel-count" id="videoCount">01 / 06</div>
           </div>
         </div>
@@ -637,18 +1152,157 @@
         </div>
 
         <div class="details-compact">
-          <div class="detail-card"><div><div class="label">DAW / Production</div><h3>Logic Pro X</h3><p>Production, guitar tracking, editing, session prep and playback file exports.</p></div><div class="micro"><span>production</span><span>tracking</span><span>playback</span></div></div>
-          <div class="detail-card"><div><div class="label">DAW / Playback</div><h3>Ableton Live</h3><p>Live playback sessions, click tracks, cues, stems and show file organisation.</p></div><div class="micro"><span>clicks</span><span>cues</span><span>stems</span></div></div>
-          <div class="detail-card"><div><div class="label">DAW / Editing</div><h3>Cubase</h3><p>Editing, stems, session prep and playback organisation.</p></div><div class="micro"><span>editing</span><span>stems</span><span>prep</span></div></div>
-          <div class="detail-card"><div><div class="label">Playback</div><h3>Show files</h3><p>Clicks, cues, stems, MIDI changes and practical live playback setup.</p></div><div class="micro"><span>clicks</span><span>MIDI</span><span>show prep</span></div></div>
-          <div class="detail-card"><div><div class="label">Digital guitar rig</div><h3>Quad Cortex</h3><p>Live guitar tones, presets, routing and tour-ready digital rigs.</p></div><div class="micro"><span>live sound</span><span>presets</span><span>routing</span></div></div>
-          <div class="detail-card"><div><div class="label">Digital guitar rig</div><h3>Kemper</h3><p>Patches, consistent show tones and profiling-based live rigs.</p></div><div class="micro"><span>patches</span><span>show tones</span></div></div>
-          <div class="detail-card"><div><div class="label">Digital guitar rig</div><h3>Line 6 units</h3><p>Patch management, digital guitar setups and live-ready sounds.</p></div><div class="micro"><span>patches</span><span>rigs</span></div></div>
-          <div class="detail-card"><div><div class="label">Live audio</div><h3>X32 Rack / XR18</h3><p>Routing, rehearsal setups, IEM-style workflows and playback integration.</p></div><div class="micro"><span>routing</span><span>rehearsals</span><span>playback</span></div></div>
-          <div class="detail-card"><div><div class="label">Live audio</div><h3>Allen & Heath</h3><p>Stage routing, live audio workflow and practical tech support.</p></div><div class="micro"><span>routing</span><span>live audio</span></div></div>
-          <div class="detail-card"><div><div class="label">Studio / Signal flow</div><h3>SSL</h3><p>Clean signal flow, studio workflow and session familiarity.</p></div><div class="micro"><span>signal flow</span><span>sessions</span></div></div>
-          <div class="detail-card"><div><div class="label">Guitar tech</div><h3>Stage guitars</h3><p>Changeovers, tuning stability, basic repairs and keeping sets running cleanly.</p></div><div class="micro"><span>changeovers</span><span>tuning</span><span>repairs</span></div></div>
-          <div class="detail-card"><div><div class="label">Live prep</div><h3>Show flow</h3><p>Set organisation, rig checks, transitions and practical stage problem-solving.</p></div><div class="micro"><span>sets</span><span>checks</span><span>flow</span></div></div>
+          <div class="detail-card">
+            <div>
+              <div class="label">DAW / Production</div>
+              <h3>Logic Pro X</h3>
+              <p>Production, guitar tracking, editing, session prep and playback file exports.</p>
+            </div>
+            <div class="micro">
+              <span>production</span>
+              <span>tracking</span>
+              <span>playback</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">DAW / Playback</div>
+              <h3>Ableton Live</h3>
+              <p>Live playback sessions, click tracks, cues, stems and show file organisation.</p>
+            </div>
+            <div class="micro">
+              <span>clicks</span>
+              <span>cues</span>
+              <span>stems</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">DAW / Editing</div>
+              <h3>Cubase</h3>
+              <p>Editing, stems, session prep and playback organisation.</p>
+            </div>
+            <div class="micro">
+              <span>editing</span>
+              <span>stems</span>
+              <span>prep</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">Playback</div>
+              <h3>Show files</h3>
+              <p>Clicks, cues, stems, MIDI changes and practical live playback setup.</p>
+            </div>
+            <div class="micro">
+              <span>clicks</span>
+              <span>MIDI</span>
+              <span>show prep</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">Digital guitar rig</div>
+              <h3>Quad Cortex</h3>
+              <p>Live guitar tones, presets, routing and tour ready digital rigs.</p>
+            </div>
+            <div class="micro">
+              <span>live sound</span>
+              <span>presets</span>
+              <span>routing</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">Digital guitar rig</div>
+              <h3>Kemper</h3>
+              <p>Patches, consistent show tones and profiling based live rigs.</p>
+            </div>
+            <div class="micro">
+              <span>patches</span>
+              <span>show tones</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">Digital guitar rig</div>
+              <h3>Line 6 units</h3>
+              <p>Patch management, digital guitar setups and live ready sounds.</p>
+            </div>
+            <div class="micro">
+              <span>patches</span>
+              <span>rigs</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">Live audio</div>
+              <h3>X32 Rack / XR18</h3>
+              <p>Routing, rehearsal setups, IEM style workflows and playback integration.</p>
+            </div>
+            <div class="micro">
+              <span>routing</span>
+              <span>rehearsals</span>
+              <span>playback</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">Live audio</div>
+              <h3>Allen & Heath</h3>
+              <p>Stage routing, live audio workflow and practical tech support.</p>
+            </div>
+            <div class="micro">
+              <span>routing</span>
+              <span>live audio</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">Studio / Signal flow</div>
+              <h3>SSL</h3>
+              <p>Clean signal flow, studio workflow and session familiarity.</p>
+            </div>
+            <div class="micro">
+              <span>signal flow</span>
+              <span>sessions</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">Guitar tech</div>
+              <h3>Stage guitars</h3>
+              <p>Changeovers, tuning stability, basic repairs and keeping sets running cleanly.</p>
+            </div>
+            <div class="micro">
+              <span>changeovers</span>
+              <span>tuning</span>
+              <span>repairs</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div>
+              <div class="label">Live prep</div>
+              <h3>Show flow</h3>
+              <p>Set organisation, rig checks, transitions and practical stage problem solving.</p>
+            </div>
+            <div class="micro">
+              <span>sets</span>
+              <span>checks</span>
+              <span>flow</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -661,17 +1315,49 @@
         </div>
 
         <div class="gallery">
-          <div class="shot big"><img src="images/live-1.jpg" alt="Aidan Mansell live performance crowd shot" /></div>
-          <div class="shot mid"><img src="images/live-2.jpg" alt="Aidan Mansell playing guitar live on stage" /></div>
-          <div class="shot small"><img src="images/live-3.jpg" alt="Aidan Mansell close-up guitar performance" /></div>
-          <div class="shot small"><img src="images/live-4.jpg" alt="Aidan Mansell silhouette guitar performance" /></div>
-          <div class="shot small"><img src="images/live-5.jpg" alt="Aidan Mansell side-stage guitar performance" /></div>
-          <div class="shot big"><img src="images/live-6.jpg" alt="Aidan Mansell performing to crowd" /></div>
-          <div class="shot mid"><img src="images/live-7.jpg" alt="Aidan Mansell green stage lights performance" /></div>
-          <div class="shot small"><img src="images/live-8.jpg" alt="Aidan Mansell red guitar live performance" /></div>
-          <div class="shot small"><img src="images/live-9.jpg" alt="Aidan Mansell South Arcade performance" /></div>
-          <div class="shot small"><img src="images/live-10.jpg" alt="Aidan Mansell live green stage performance" /></div>
-          <div class="shot small"><img src="images/live-11.jpg" alt="Aidan Mansell live guitar performance" /></div>
+          <div class="shot big">
+            <img src="images/live-1.jpg" alt="Aidan Mansell live performance crowd shot" />
+          </div>
+
+          <div class="shot mid">
+            <img src="images/live-2.jpg" alt="Aidan Mansell playing guitar live on stage" />
+          </div>
+
+          <div class="shot small">
+            <img src="images/live-3.jpg" alt="Aidan Mansell close up guitar performance" />
+          </div>
+
+          <div class="shot small">
+            <img src="images/live-4.jpg" alt="Aidan Mansell silhouette guitar performance" />
+          </div>
+
+          <div class="shot small">
+            <img src="images/live-5.jpg" alt="Aidan Mansell side stage guitar performance" />
+          </div>
+
+          <div class="shot big">
+            <img src="images/live-6.jpg" alt="Aidan Mansell performing to crowd" />
+          </div>
+
+          <div class="shot mid">
+            <img src="images/live-7.jpg" alt="Aidan Mansell green stage lights performance" />
+          </div>
+
+          <div class="shot small">
+            <img src="images/live-8.jpg" alt="Aidan Mansell red guitar live performance" />
+          </div>
+
+          <div class="shot small">
+            <img src="images/live-9.jpg" alt="Aidan Mansell South Arcade performance" />
+          </div>
+
+          <div class="shot small">
+            <img src="images/live-10.jpg" alt="Aidan Mansell live green stage performance" />
+          </div>
+
+          <div class="shot small">
+            <img src="images/live-11.jpg" alt="Aidan Mansell live guitar performance" />
+          </div>
         </div>
       </div>
     </section>
@@ -684,9 +1370,20 @@
         </div>
 
         <div class="contact-links">
-          <a href="mailto:aidan.mansell@gmail.com"><span>Email</span><span>aidan.mansell@gmail.com</span></a>
-          <a href="https://www.instagram.com/aidan.nothere/" target="_blank" rel="noreferrer"><span>Instagram</span><span>@aidan.nothere</span></a>
-          <a href="#top"><span>Location</span><span>London, UK</span></a>
+          <a href="mailto:aidan.mansell@gmail.com">
+            <span>Email</span>
+            <span>aidan.mansell@gmail.com</span>
+          </a>
+
+          <a href="https://www.instagram.com/aidan.nothere/" target="_blank" rel="noreferrer">
+            <span>Instagram</span>
+            <span>@aidan.nothere</span>
+          </a>
+
+          <a href="#top">
+            <span>Location</span>
+            <span>London, UK</span>
+          </a>
         </div>
       </div>
     </section>
@@ -701,12 +1398,12 @@
 
   <script>
     const videoItems = [
-      { playbackId: "MSv8ow9h9e9dtoT02RJWi01sPH98DqYKdN1xdXXoCoWNI" },
-      { playbackId: "fXogupp27a402VtojlPAP8KmoHtOW3eSKKJkwB6liXIs" },
       { playbackId: "3oM00bx8DJ01WVeSrZ1rBHnCGt7x01EDinT2yoFj6Fmido" },
       { playbackId: "WZFBswhStjPED87pePirmR00fPIOtHW9vElxUNZDy00q00" },
       { playbackId: "o3SUEQnAKLHahw1WyyKJlnk7fWtKyG2ahKty5Jz86XE" },
-      { playbackId: "tufJEABNMT01wLGkgkGGk5j6DgVCyVOONDVeAUlrx4Is" }
+      { playbackId: "tufJEABNMT01wLGkgkGGk5j6DgVCyVOONDVeAUlrx4Is" },
+      { playbackId: "MSv8ow9h9e9dtoT02RJWi01sPH98DqYKdN1xdXXoCoWNI" },
+      { playbackId: "fXogupp27a402VtojlPAP8KmoHtOW3eSKKJkwB6liXIs" }
     ];
 
     const track = document.getElementById("videoTrack");
@@ -724,6 +1421,14 @@
       return String(num).padStart(2, "0");
     }
 
+    function muxThumb(playbackId){
+      return `https://image.mux.com/${playbackId}/thumbnail.webp?time=0&width=800`;
+    }
+
+    function muxPlayer(playbackId){
+      return `https://player.mux.com/${playbackId}?metadata-video-title=Aidan%20Mansell%20clip&accent-color=%23f4f1ea`;
+    }
+
     function buildCarousel(){
       track.innerHTML = "";
       dots.innerHTML = "";
@@ -731,17 +1436,12 @@
       videoItems.forEach((item, index) => {
         const slide = document.createElement("div");
         slide.className = "video-slide";
+        slide.dataset.index = index;
         slide.innerHTML = `
-          <mux-player
-            playback-id="${item.playbackId}"
-            metadata-video-title="Aidan Mansell clip ${index + 1}"
-            stream-type="on-demand"
-            accent-color="#f4f1ea"
-            forward-seek-offset="10"
-            backward-seek-offset="10"
-            playsinline
-          ></mux-player>
+          <img class="video-thumb" src="${muxThumb(item.playbackId)}" alt="Aidan Mansell video thumbnail" loading="lazy" />
+          <div class="video-loading">Select to play</div>
         `;
+
         slide.addEventListener("click", () => goToVideo(index));
         track.appendChild(slide);
 
@@ -756,11 +1456,35 @@
       updateCarousel(false);
     }
 
-    function pauseInactivePlayers(){
-      const players = [...track.querySelectorAll("mux-player")];
-      players.forEach((player, index) => {
-        if(index !== activeIndex && typeof player.pause === "function"){
-          player.pause();
+    function renderActiveVideo(){
+      const slides = [...track.querySelectorAll(".video-slide")];
+
+      slides.forEach((slide, index) => {
+        const item = videoItems[index];
+
+        if(index === activeIndex){
+          const existingFrame = slide.querySelector("iframe");
+
+          if(!existingFrame){
+            slide.innerHTML = `
+              <iframe
+                class="video-frame"
+                src="${muxPlayer(item.playbackId)}"
+                title="Aidan Mansell video clip ${index + 1}"
+                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                allowfullscreen
+              ></iframe>
+            `;
+          }
+        } else {
+          const existingThumb = slide.querySelector(".video-thumb");
+
+          if(!existingThumb){
+            slide.innerHTML = `
+              <img class="video-thumb" src="${muxThumb(item.playbackId)}" alt="Aidan Mansell video thumbnail" loading="lazy" />
+              <div class="video-loading">Select to play</div>
+            `;
+          }
         }
       });
     }
@@ -773,8 +1497,6 @@
         slide.classList.toggle("is-active", index === activeIndex);
         slide.classList.toggle("is-near", Math.abs(index - activeIndex) === 1);
       });
-
-      pauseInactivePlayers();
 
       dotButtons.forEach((dot, index) => {
         dot.classList.toggle("is-active", index === activeIndex);
@@ -792,6 +1514,8 @@
 
       track.style.transition = animate ? "transform .62s cubic-bezier(.19,1,.22,1)" : "none";
       track.style.transform = `translateX(${-move}px)`;
+
+      renderActiveVideo();
     }
 
     function goToVideo(index){
@@ -816,6 +1540,7 @@
       if(!isDragging) return;
       isDragging = false;
       const delta = event.clientX - startX;
+
       if(Math.abs(delta) > 45){
         if(delta < 0) goToVideo(activeIndex + 1);
         else goToVideo(activeIndex - 1);
