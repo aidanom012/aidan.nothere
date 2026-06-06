@@ -423,7 +423,7 @@
       display:grid;
       place-items:center;
       border:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.26));
+      background:linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.28));
       color:rgba(244,241,234,.92);
       font-size:12px;
       text-transform:uppercase;
@@ -434,14 +434,18 @@
     .video-play span{
       display:inline-grid;
       place-items:center;
-      width:62px;
-      height:62px;
+      width:68px;
+      height:68px;
       border-radius:999px;
-      border:1px solid rgba(244,241,234,.7);
-      background:rgba(0,0,0,.18);
-      font-size:20px;
+      border:1px solid rgba(244,241,234,.78);
+      background:rgba(0,0,0,.22);
+      font-size:22px;
       letter-spacing:0;
       padding-left:4px;
+    }
+
+    .video-play:hover span{
+      background:rgba(244,241,234,.16);
     }
 
     .carousel-controls{
@@ -565,33 +569,35 @@
       white-space:nowrap;
     }
 
-    .gallery{
+    .photo-grid{
       display:grid;
       grid-template-columns:repeat(12,1fr);
-      grid-auto-rows:120px;
       gap:14px;
-      align-items:stretch;
+      align-items:start;
     }
 
-    .shot{
+    .photo-item{
       border:1px solid var(--ink);
       background:var(--soft);
       overflow:hidden;
-      min-height:0;
     }
 
-    .shot img{
+    .photo-item img{
       width:100%;
-      height:100%;
-      object-fit:cover;
-      filter:contrast(1.07) saturate(.92);
+      height:auto;
+      object-fit:contain;
+      filter:contrast(1.06) saturate(.94);
     }
 
-    .shot.feature{grid-column:span 6;grid-row:span 4}
-    .shot.wide{grid-column:span 6;grid-row:span 2}
-    .shot.square{grid-column:span 3;grid-row:span 2}
-    .shot.tall{grid-column:span 3;grid-row:span 4}
-    .shot.small{grid-column:span 3;grid-row:span 2}
+    .photo-item.large{grid-column:span 7}
+    .photo-item.medium{grid-column:span 5}
+    .photo-item.third{grid-column:span 4}
+    .photo-item.half{grid-column:span 6}
+    .photo-item.small{grid-column:span 3}
+
+    .photo-row-tight{
+      margin-top:14px;
+    }
 
     .contact{
       display:grid;
@@ -643,39 +649,32 @@
       .carousel-controls{align-items:flex-start;flex-direction:column}
       .dots{justify-content:flex-start}
 
-      .gallery{
+      .photo-grid{
         grid-template-columns:repeat(6,1fr);
-        grid-auto-rows:105px;
       }
 
-      .shot.feature{grid-column:span 6;grid-row:span 4}
-      .shot.wide{grid-column:span 6;grid-row:span 2}
-      .shot.square,
-      .shot.small{grid-column:span 3;grid-row:span 2}
-      .shot.tall{grid-column:span 3;grid-row:span 4}
+      .photo-item.large,
+      .photo-item.medium,
+      .photo-item.half{grid-column:span 6}
+
+      .photo-item.third,
+      .photo-item.small{grid-column:span 3}
     }
 
     @media (max-width:650px){
       .details-compact{grid-template-columns:1fr}
       .contact-links a{flex-direction:column}
 
-      .gallery{
+      .photo-grid{
         grid-template-columns:1fr;
-        grid-auto-rows:auto;
       }
 
-      .shot,
-      .shot.feature,
-      .shot.wide,
-      .shot.square,
-      .shot.tall,
-      .shot.small{
+      .photo-item.large,
+      .photo-item.medium,
+      .photo-item.third,
+      .photo-item.half,
+      .photo-item.small{
         grid-column:auto;
-        grid-row:auto;
-      }
-
-      .shot img{
-        height:auto;
       }
     }
   </style>
@@ -1175,25 +1174,26 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Photos</h2>
-          <p class="section-note">A tighter edit of live shots, stage photos and touring moments.</p>
+          <p class="section-note">Live shots, stage photos and touring moments.</p>
         </div>
 
-        <div class="gallery">
-          <div class="shot feature"><img src="images/live-1.webp" alt="Aidan Mansell playing guitar live" loading="lazy" decoding="async" width="1200" height="900" /></div>
-          <div class="shot wide"><img src="images/live-8.webp" alt="Aidan Mansell on stage with red guitar" loading="lazy" decoding="async" width="1200" height="700" /></div>
-          <div class="shot square"><img src="images/live-12.webp" alt="Aidan Mansell playing guitar live" loading="lazy" decoding="async" width="800" height="800" /></div>
-          <div class="shot square"><img src="images/live-5.webp" alt="Aidan Mansell side stage" loading="lazy" decoding="async" width="800" height="800" /></div>
+        <div class="photo-grid">
+          <div class="photo-item large"><img src="images/live-6.webp" alt="Aidan Mansell performing to a crowd" loading="lazy" decoding="async" /></div>
+          <div class="photo-item medium"><img src="images/live-8.webp" alt="Aidan Mansell on stage with red guitar" loading="lazy" decoding="async" /></div>
 
-          <div class="shot tall"><img src="images/live-4.webp" alt="Aidan Mansell silhouetted on stage" loading="lazy" decoding="async" width="700" height="1200" /></div>
-          <div class="shot feature"><img src="images/live-6.webp" alt="Aidan Mansell performing to a crowd" loading="lazy" decoding="async" width="1200" height="900" /></div>
-          <div class="shot small"><img src="images/live-14.webp" alt="Aidan Mansell live with drums" loading="lazy" decoding="async" width="800" height="600" /></div>
-          <div class="shot small"><img src="images/live-9.webp" alt="Aidan Mansell live performance" loading="lazy" decoding="async" width="800" height="600" /></div>
+          <div class="photo-item third"><img src="images/live-12.webp" alt="Aidan Mansell playing guitar live" loading="lazy" decoding="async" /></div>
+          <div class="photo-item third"><img src="images/live-5.webp" alt="Aidan Mansell side stage" loading="lazy" decoding="async" /></div>
+          <div class="photo-item third"><img src="images/live-4.webp" alt="Aidan Mansell silhouetted on stage" loading="lazy" decoding="async" /></div>
 
-          <div class="shot wide"><img src="images/live-7.webp" alt="Aidan Mansell live under green lights" loading="lazy" decoding="async" width="1200" height="700" /></div>
-          <div class="shot square"><img src="images/live-10.webp" alt="Aidan Mansell live guitar performance" loading="lazy" decoding="async" width="800" height="800" /></div>
-          <div class="shot square"><img src="images/live-11.webp" alt="Aidan Mansell live guitar performance" loading="lazy" decoding="async" width="800" height="800" /></div>
-          <div class="shot small"><img src="images/live-13.webp" alt="Aidan Mansell live stage photo" loading="lazy" decoding="async" width="800" height="600" /></div>
-          <div class="shot small"><img src="images/live-3.webp" alt="Aidan Mansell close up guitar performance" loading="lazy" decoding="async" width="800" height="600" /></div>
+          <div class="photo-item half"><img src="images/live-1.webp" alt="Aidan Mansell playing guitar live" loading="lazy" decoding="async" /></div>
+          <div class="photo-item half"><img src="images/live-14.webp" alt="Aidan Mansell live with drums" loading="lazy" decoding="async" /></div>
+
+          <div class="photo-item third"><img src="images/live-7.webp" alt="Aidan Mansell live under green lights" loading="lazy" decoding="async" /></div>
+          <div class="photo-item third"><img src="images/live-13.webp" alt="Aidan Mansell live stage photo" loading="lazy" decoding="async" /></div>
+          <div class="photo-item third"><img src="images/live-3.webp" alt="Aidan Mansell close up guitar performance" loading="lazy" decoding="async" /></div>
+
+          <div class="photo-item half"><img src="images/live-10.webp" alt="Aidan Mansell live guitar performance" loading="lazy" decoding="async" /></div>
+          <div class="photo-item half"><img src="images/live-11.webp" alt="Aidan Mansell live guitar performance" loading="lazy" decoding="async" /></div>
         </div>
       </div>
     </section>
@@ -1234,6 +1234,7 @@
     let activeIndex = 3;
     let startX = 0;
     let isDragging = false;
+    let didDrag = false;
 
     function pad(num){
       return String(num).padStart(2, "0");
@@ -1244,7 +1245,7 @@
     }
 
     function muxPlayer(playbackId){
-      return `https://player.mux.com/${playbackId}?metadata-video-title=Aidan%20Mansell%20clip&accent-color=%23f4f1ea`;
+      return `https://player.mux.com/${playbackId}?autoplay=1&metadata-video-title=Aidan%20Mansell%20clip&accent-color=%23f4f1ea`;
     }
 
     function buildCarousel(){
@@ -1260,12 +1261,14 @@
           <button class="video-play" type="button" aria-label="Play video"><span>▶</span></button>
         `;
 
+        slide.querySelector(".video-play").addEventListener("click", (event) => {
+          event.stopPropagation();
+          playVideo(index);
+        });
+
         slide.addEventListener("click", () => {
-          if(index === activeIndex){
-            loadVideo(index);
-          } else {
-            goToVideo(index);
-          }
+          if(didDrag) return;
+          goToVideo(index);
         });
 
         track.appendChild(slide);
@@ -1281,6 +1284,15 @@
       updateCarousel(false);
     }
 
+    function playVideo(index){
+      activeIndex = index;
+      updateCarousel(true);
+
+      window.requestAnimationFrame(() => {
+        loadVideo(index);
+      });
+    }
+
     function loadVideo(index){
       const slides = [...track.querySelectorAll(".video-slide")];
       const slide = slides[index];
@@ -1293,7 +1305,8 @@
           class="video-frame"
           src="${muxPlayer(item.playbackId)}"
           title="Aidan Mansell video clip ${index + 1}"
-          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+          loading="lazy"
+          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
           allowfullscreen
         ></iframe>
       `;
@@ -1311,6 +1324,11 @@
             <img class="video-thumb" src="${muxThumb(item.playbackId)}" alt="Aidan Mansell video thumbnail" loading="lazy" />
             <button class="video-play" type="button" aria-label="Play video"><span>▶</span></button>
           `;
+
+          slide.querySelector(".video-play").addEventListener("click", (event) => {
+            event.stopPropagation();
+            playVideo(index);
+          });
         }
       });
     }
@@ -1358,19 +1376,32 @@
 
     stage.addEventListener("pointerdown", (event) => {
       isDragging = true;
+      didDrag = false;
       startX = event.clientX;
       stage.setPointerCapture(event.pointerId);
+    });
+
+    stage.addEventListener("pointermove", (event) => {
+      if(!isDragging) return;
+      if(Math.abs(event.clientX - startX) > 8){
+        didDrag = true;
+      }
     });
 
     stage.addEventListener("pointerup", (event) => {
       if(!isDragging) return;
       isDragging = false;
+
       const delta = event.clientX - startX;
 
       if(Math.abs(delta) > 45){
         if(delta < 0) goToVideo(activeIndex + 1);
         else goToVideo(activeIndex - 1);
       }
+
+      setTimeout(() => {
+        didDrag = false;
+      }, 50);
     });
 
     document.addEventListener("keydown", (event) => {
